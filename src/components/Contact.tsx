@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { MessageSquare, Github } from "lucide-react";
+import { GlowingEffect } from "@/components/ui/glowing-effect";
 
 const Contact = () => {
   return (
@@ -14,8 +15,16 @@ const Contact = () => {
           </p>
         </div>
 
-        <div className="bg-card border border-border rounded-lg p-8 md:p-12 card-glow">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+        <div className="relative bg-card border border-border rounded-lg p-8 md:p-12 overflow-hidden">
+          <GlowingEffect
+            spread={50}
+            glow={true}
+            disabled={false}
+            proximity={100}
+            inactiveZone={0.01}
+            borderWidth={3}
+          />
+          <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
             <div className="text-center p-6 rounded-lg bg-muted/50 border border-border">
               <MessageSquare className="h-12 w-12 text-primary mx-auto mb-4" />
               <h3 className="text-xl font-bold mb-2">Discord</h3>
@@ -42,7 +51,7 @@ const Contact = () => {
             </div>
           </div>
 
-          <div className="text-center pt-6 border-t border-border">
+          <div className="relative z-10 text-center pt-6 border-t border-border">
             <p className="text-muted-foreground mb-2">Also find me on X (Twitter)</p>
             <a 
               href="https://x.com/xo1o" 

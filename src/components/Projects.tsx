@@ -2,6 +2,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ExternalLink } from "lucide-react";
+import { GlowingEffect } from "@/components/ui/glowing-effect";
 
 const releasedGames = [
   {
@@ -77,9 +78,17 @@ const Projects = () => {
               {releasedGames.map((game, index) => (
                 <Card 
                   key={index}
-                  className="bg-card border-border hover:border-primary transition-all duration-300 card-glow group"
+                  className="relative bg-card border-border hover:border-primary transition-all duration-300 group overflow-hidden"
                 >
-                  <CardHeader>
+                  <GlowingEffect
+                    spread={40}
+                    glow={true}
+                    disabled={false}
+                    proximity={80}
+                    inactiveZone={0.01}
+                    borderWidth={2}
+                  />
+                  <CardHeader className="relative z-10">
                     <div className="flex items-start justify-between mb-2">
                       <CardTitle className="text-2xl group-hover:text-primary transition-colors">
                         {game.title}
@@ -88,7 +97,7 @@ const Projects = () => {
                     </div>
                     <CardDescription className="text-base">{game.description}</CardDescription>
                   </CardHeader>
-                  <CardContent>
+                  <CardContent className="relative z-10">
                     <div className="space-y-3">
                       <div className="flex items-center gap-2">
                         <Badge variant="outline" className="border-primary text-primary">
@@ -117,18 +126,23 @@ const Projects = () => {
               {unreleasedGames.map((game, index) => (
                 <Card 
                   key={index}
-                  className="bg-card border-border hover:border-secondary transition-all duration-300 group"
-                  style={{ 
-                    boxShadow: '0 0 30px hsl(270 80% 65% / 0.1)',
-                  }}
+                  className="relative bg-card border-border hover:border-secondary transition-all duration-300 group overflow-hidden"
                 >
-                  <CardHeader>
+                  <GlowingEffect
+                    spread={40}
+                    glow={true}
+                    disabled={false}
+                    proximity={80}
+                    inactiveZone={0.01}
+                    borderWidth={2}
+                  />
+                  <CardHeader className="relative z-10">
                     <CardTitle className="text-xl group-hover:text-secondary transition-colors">
                       {game.title}
                     </CardTitle>
                     <CardDescription>{game.description}</CardDescription>
                   </CardHeader>
-                  <CardContent>
+                  <CardContent className="relative z-10">
                     <div className="space-y-3">
                       <Badge variant="outline" className="border-secondary text-secondary">
                         {game.role}
