@@ -1,7 +1,7 @@
-import { Github, MessageSquare } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { SparklesCore } from "@/components/ui/sparkles";
 import { AnimatedHeader } from "@/components/ui/animated-header";
+import { StarBorder } from "@/components/ui/star-border";
+import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
 
 const Hero = () => {
   return (
@@ -38,21 +38,26 @@ const Hero = () => {
         </p>
 
         <div className="flex flex-wrap gap-4 justify-center mb-12">
-          <Button
-            size="lg"
-            className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 py-6 text-lg card-glow"
-          >
-            <Github className="mr-2 h-5 w-5" />
-            View Projects
-          </Button>
-          <Button
-            size="lg"
-            variant="outline"
-            className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground font-semibold px-8 py-6 text-lg"
-          >
-            <MessageSquare className="mr-2 h-5 w-5" />
-            Contact Me
-          </Button>
+          <StarBorder speed="8s">
+            <InteractiveHoverButton
+              text="View Projects"
+              className="bg-primary hover:bg-primary text-primary-foreground font-semibold px-8 py-6 text-lg w-auto card-glow border-primary"
+              onClick={() => {
+                const projectsSection = document.getElementById('projects');
+                projectsSection?.scrollIntoView({ behavior: 'smooth' });
+              }}
+            />
+          </StarBorder>
+          <StarBorder speed="10s">
+            <InteractiveHoverButton
+              text="Contact Me"
+              className="bg-background hover:bg-primary text-foreground hover:text-primary-foreground font-semibold px-8 py-6 text-lg w-auto border-2 border-primary"
+              onClick={() => {
+                const contactSection = document.getElementById('contact');
+                contactSection?.scrollIntoView({ behavior: 'smooth' });
+              }}
+            />
+          </StarBorder>
         </div>
       </div>
     </section>
