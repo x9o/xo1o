@@ -1,6 +1,6 @@
+import { Github, MessageSquare } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { SparklesCore } from "@/components/ui/sparkles";
-import { AnimatedHeader } from "@/components/ui/animated-header";
-import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
 
 const Hero = () => {
   return (
@@ -22,10 +22,7 @@ const Hero = () => {
 
       <div className="container mx-auto text-center z-10 animate-fade-in">
         <div className="relative inline-block mb-6">
-          <AnimatedHeader 
-            text="xo1o"
-            className="text-5xl md:text-7xl lg:text-8xl font-bold gradient-text"
-          />
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold gradient-text">xo1o</h1>
           {/* Animated underline */}
           <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-primary via-secondary to-accent animate-pulse" />
           <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-primary via-secondary to-accent blur-sm" />
@@ -37,22 +34,37 @@ const Hero = () => {
         </p>
 
         <div className="flex flex-wrap gap-4 justify-center mb-12">
-          <InteractiveHoverButton
-            text="View Projects"
-            className="bg-primary text-primary-foreground font-semibold px-8 py-6 text-lg w-auto card-glow border-primary"
-            onClick={() => {
-              const projectsSection = document.getElementById('projects');
-              projectsSection?.scrollIntoView({ behavior: 'smooth' });
-            }}
-          />
-          <InteractiveHoverButton
-            text="Contact Me"
-            className="bg-background text-foreground font-semibold px-8 py-6 text-lg w-auto border-2 border-primary"
-            onClick={() => {
-              const contactSection = document.getElementById('contact');
-              contactSection?.scrollIntoView({ behavior: 'smooth' });
-            }}
-          />
+          <Button
+            size="lg"
+            variant="outline"
+            className="rounded-md border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground font-semibold px-8 py-6 text-lg"
+          >
+            <Github className="mr-2 h-5 w-5" />
+            View Projects
+          </Button>
+          <Button
+            size="lg"
+            variant="outline"
+            className="rounded-md border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground font-semibold px-8 py-6 text-lg"
+          >
+            <MessageSquare className="mr-2 h-5 w-5" />
+            Contact Me
+          </Button>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+          <div className="p-6 rounded-lg bg-card border border-border backdrop-blur-sm">
+            <h3 className="text-3xl font-bold text-primary mb-2">High Session Time</h3>
+            <p className="text-muted-foreground">Engaging gameplay loops</p>
+          </div>
+          <div className="p-6 rounded-lg bg-card border border-border backdrop-blur-sm">
+            <h3 className="text-3xl font-bold text-secondary mb-2">D1 & D7 Retention</h3>
+            <p className="text-muted-foreground">Players keep coming back</p>
+          </div>
+          <div className="p-6 rounded-lg bg-card border border-border backdrop-blur-sm">
+            <h3 className="text-3xl font-bold text-accent mb-2">High Conversion</h3>
+            <p className="text-muted-foreground">Monetization that works</p>
+          </div>
         </div>
       </div>
     </section>
