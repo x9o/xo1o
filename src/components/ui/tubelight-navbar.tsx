@@ -30,6 +30,31 @@ export function NavBar({ items, className }: NavBarProps) {
     return () => window.removeEventListener("resize", handleResize)
   }, [])
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = items.map(item => ({
+        name: item.name,
+        element: document.querySelector(item.url)
+      }))
+
+      const scrollPosition = window.scrollY + window.innerHeight / 3
+
+      for (const section of sections) {
+        if (section.element) {
+          const { offsetTop, offsetHeight } = section.element as HTMLElement
+          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+            setActiveTab(section.name)
+            break
+          }
+        }
+      }
+    }
+
+    window.addEventListener("scroll", handleScroll)
+    handleScroll() // Call once on mount
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [items])
+
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, item: NavItem) => {
     e.preventDefault()
     setActiveTab(item.name)
