@@ -45,6 +45,18 @@ const CustomSlider = ({
   );
 };
 
+// Function to extract YouTube video ID from various YouTube URL formats
+const getYouTubeVideoId = (url: string): string | null => {
+  const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
+  const match = url.match(regExp);
+  return (match && match[2].length === 11) ? match[2] : null;
+};
+
+// Function to check if URL is a YouTube URL
+const isYouTubeUrl = (url: string): boolean => {
+  return /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=).*/.test(url);
+};
+
 const VideoPlayer = ({ src }: { src: string }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -115,6 +127,35 @@ const VideoPlayer = ({ src }: { src: string }) => {
       setPlaybackSpeed(speed);
     }
   };
+
+  // Check if the URL is a YouTube URL
+  if (isYouTubeUrl(src)) {
+    const videoId = getYouTubeVideoId(src);
+    if (!videoId) {
+      return (
+        <div className="w-full max-w-4xl mx-auto rounded-xl overflow-hidden bg-[#11111198] shadow-[0_0_20px_rgba(0,0,0,0.2)] backdrop-blur-sm p-8 text-center">
+          <p className="text-white">Invalid YouTube URL</p>
+        </div>
+      );
+    }
+
+    return (
+      <motion.div
+        className="relative w-full max-w-4xl mx-auto rounded-xl overflow-hidden bg-[#11111198] shadow-[0_0_20px_rgba(0,0,0,0.2)] backdrop-blur-sm"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        <iframe
+          src={`https://www.youtube.com/embed/${videoId}?rel=0&modestbranding=1&showinfo=0`}
+          className="w-full aspect-video"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+          title="YouTube video player"
+        />
+      </motion.div>
+    );
+  }
 
   return (
     <motion.div

@@ -1,11 +1,14 @@
 import { Home, Code2, Briefcase, Layers, MessageSquare } from "lucide-react";
-import Hero from "@/components/Hero";
-import Skills from "@/components/Skills";
-import Projects from "@/components/Projects";
-import Systems from "@/components/Systems";
-import Contact from "@/components/Contact";
-import Footer from "@/components/Footer";
+import { lazy, Suspense } from "react";
 import { NavBar } from "@/components/ui/tubelight-navbar";
+
+// Lazy load heavy components
+const Hero = lazy(() => import("@/components/Hero"));
+const Skills = lazy(() => import("@/components/Skills"));
+const Projects = lazy(() => import("@/components/Projects"));
+const Systems = lazy(() => import("@/components/Systems"));
+const Contact = lazy(() => import("@/components/Contact"));
+const Footer = lazy(() => import("@/components/Footer"));
 
 const Index = () => {
   const navItems = [
@@ -19,12 +22,24 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <NavBar items={navItems} />
-      <Hero />
-      <Skills />
-      <Projects />
-      <Systems />
-      <Contact />
-      <Footer />
+      <Suspense fallback={<div className="min-h-screen flex items-center justify-center"><div className="animate-spin rounded-full h-32 w-32 border-b-2 border-primary"></div></div>}>
+        <Hero />
+      </Suspense>
+      <Suspense fallback={<div className="py-20"><div className="animate-pulse bg-muted/30 h-96 rounded-lg"></div></div>}>
+        <Skills />
+      </Suspense>
+      <Suspense fallback={<div className="py-20"><div className="animate-pulse bg-muted/30 h-96 rounded-lg"></div></div>}>
+        <Projects />
+      </Suspense>
+      <Suspense fallback={<div className="py-20"><div className="animate-pulse bg-muted/30 h-96 rounded-lg"></div></div>}>
+        <Systems />
+      </Suspense>
+      <Suspense fallback={<div className="py-20"><div className="animate-pulse bg-muted/30 h-96 rounded-lg"></div></div>}>
+        <Contact />
+      </Suspense>
+      <Suspense fallback={<div className="py-4"><div className="animate-pulse bg-muted/30 h-16 rounded-lg"></div></div>}>
+        <Footer />
+      </Suspense>
     </div>
   );
 };
