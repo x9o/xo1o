@@ -1,6 +1,7 @@
 import { Github, MessageSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SparklesCore } from "@/components/ui/sparkles";
+import { AnimatedHeader } from "@/components/ui/animated-header";
 
 const Hero = () => {
   return (
@@ -22,7 +23,10 @@ const Hero = () => {
 
       <div className="container mx-auto text-center z-10 animate-fade-in">
         <div className="relative inline-block mb-6">
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold gradient-text">xo1o</h1>
+          <AnimatedHeader 
+            text="xo1o"
+            className="text-5xl md:text-7xl lg:text-8xl font-bold gradient-text"
+          />
           {/* Animated underline */}
           <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-primary via-secondary to-accent animate-pulse" />
           <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-primary via-secondary to-accent blur-sm" />

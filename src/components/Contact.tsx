@@ -1,14 +1,17 @@
 import { Button } from "@/components/ui/button";
 import { MessageSquare, Github } from "lucide-react";
+import { AnimatedHeader } from "@/components/ui/animated-header";
 
 const Contact = () => {
   return (
     <section className="py-20 px-4 bg-muted/30" id="contact">
       <div className="container mx-auto max-w-4xl">
         <div className="text-center mb-12 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Let's <span className="gradient-text">Work Together</span>
-          </h2>
+          <AnimatedHeader 
+            text="Let's Work Together"
+            gradientText="Work Together"
+            className="text-4xl md:text-5xl font-bold mb-4"
+          />
           <p className="text-muted-foreground text-lg">
             Ready to build the next hit Roblox game?
           </p>

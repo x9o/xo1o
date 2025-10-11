@@ -3,6 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Sparkles, PawPrint, Zap, Sword } from "lucide-react";
 import VideoPlayer from "@/components/ui/video-player";
 import { GradientCard } from "@/components/ui/gradient-card";
+import { AnimatedHeader } from "@/components/ui/animated-header";
 
 const systems = [
   {
@@ -47,9 +48,11 @@ const Systems = () => {
     <section className="py-20 px-4" id="systems">
       <div className="container mx-auto">
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Featured <span className="gradient-text">Systems</span>
-          </h2>
+          <AnimatedHeader 
+            text="Featured Systems"
+            gradientText="Systems"
+            className="text-4xl md:text-5xl font-bold mb-4"
+          />
           <p className="text-muted-foreground text-lg">
             Custom systems and mechanics I've developed
           </p>

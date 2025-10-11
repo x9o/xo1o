@@ -4,6 +4,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ExternalLink } from "lucide-react";
 import VideoPlayer from "@/components/ui/video-player";
 import { GradientCard } from "@/components/ui/gradient-card";
+import { AnimatedHeader } from "@/components/ui/animated-header";
 
 const releasedGames = [
   {
@@ -67,9 +68,11 @@ const Projects = () => {
     <section className="py-20 px-4 bg-muted/30" id="projects">
       <div className="container mx-auto">
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Games I've <span className="gradient-text">Worked On</span>
-          </h2>
+          <AnimatedHeader 
+            text="Games I've Worked On"
+            gradientText="Worked On"
+            className="text-4xl md:text-5xl font-bold mb-4"
+          />
           <p className="text-muted-foreground text-lg">
             Released titles and upcoming projects
           </p>
