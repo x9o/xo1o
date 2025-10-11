@@ -1,5 +1,6 @@
 import { Code2, Database, Zap, Layers, ShoppingCart, Gamepad2 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { GlareCard } from "@/components/ui/glare-card";
 
 const skills = [
   {
@@ -47,30 +48,27 @@ const Skills = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {skills.map((skill, index) => (
-            <Card
+            <GlareCard
               key={index}
-              className="bg-card border-border hover:border-primary transition-all duration-300 card-glow group"
-              style={{ animationDelay: `${index * 100}ms` }}
+              className="p-6 flex flex-col items-start justify-start"
             >
-              <CardContent className="p-6 space-y-4">
-                <div className="flex items-start gap-4">
-                  <div className="p-3 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
-                    <skill.icon className="h-6 w-6 text-primary" />
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-xl font-bold mb-3 text-foreground">{skill.title}</h3>
-                    <ul className="space-y-2">
-                      {skill.items.map((item, i) => (
-                        <li key={i} className="text-muted-foreground text-sm flex items-start">
-                          <span className="text-primary mr-2">▹</span>
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+              <div className="flex items-start gap-4 w-full">
+                <div className="p-3 rounded-lg bg-primary/10 transition-colors">
+                  <skill.icon className="h-6 w-6 text-primary" />
                 </div>
-              </CardContent>
-            </Card>
+                <div className="flex-1">
+                  <h3 className="text-xl font-bold mb-3 text-foreground">{skill.title}</h3>
+                  <ul className="space-y-2">
+                    {skill.items.map((item, i) => (
+                      <li key={i} className="text-muted-foreground text-sm flex items-start">
+                        <span className="text-primary mr-2">▹</span>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </GlareCard>
           ))}
         </div>
       </div>

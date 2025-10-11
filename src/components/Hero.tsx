@@ -1,6 +1,7 @@
 import { Github, MessageSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SparklesCore } from "@/components/ui/sparkles";
+import { GlareCard } from "@/components/ui/glare-card";
 
 const Hero = () => {
   return (
@@ -53,18 +54,18 @@ const Hero = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-          <div className="p-6 rounded-lg bg-card border border-border backdrop-blur-sm">
+          <GlareCard className="p-6 flex flex-col items-start justify-center">
             <h3 className="text-3xl font-bold text-primary mb-2">High Session Time</h3>
             <p className="text-muted-foreground">Engaging gameplay loops</p>
-          </div>
-          <div className="p-6 rounded-lg bg-card border border-border backdrop-blur-sm">
+          </GlareCard>
+          <GlareCard className="p-6 flex flex-col items-start justify-center">
             <h3 className="text-3xl font-bold text-secondary mb-2">D1 & D7 Retention</h3>
             <p className="text-muted-foreground">Players keep coming back</p>
-          </div>
-          <div className="p-6 rounded-lg bg-card border border-border backdrop-blur-sm">
+          </GlareCard>
+          <GlareCard className="p-6 flex flex-col items-start justify-center">
             <h3 className="text-3xl font-bold text-accent mb-2">High Conversion</h3>
             <p className="text-muted-foreground">Monetization that works</p>
-          </div>
+          </GlareCard>
         </div>
       </div>
     </section>
