@@ -1,7 +1,6 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Sparkles, PawPrint, Zap, Sword } from "lucide-react";
-import { GlowingEffect } from "@/components/ui/glowing-effect";
 
 const systems = [
   {
@@ -53,17 +52,12 @@ const Systems = () => {
           {systems.map((system, index) => (
             <Card 
               key={index}
-              className="relative bg-card border-border hover:border-accent transition-all duration-300 group overflow-hidden"
+              className="bg-card border-border hover:border-accent transition-all duration-300 group overflow-hidden"
+              style={{ 
+                boxShadow: '0 0 30px hsl(180 100% 60% / 0.1)',
+              }}
             >
-              <GlowingEffect
-                spread={40}
-                glow={true}
-                disabled={false}
-                proximity={80}
-                inactiveZone={0.01}
-                borderWidth={2}
-              />
-              <CardHeader className="relative z-10">
+              <CardHeader>
                 <div className="flex items-start gap-4">
                   <div className="p-3 rounded-lg bg-accent/10 group-hover:bg-accent/20 transition-colors">
                     <system.icon className="h-6 w-6 text-accent" />
@@ -78,7 +72,7 @@ const Systems = () => {
                   </div>
                 </div>
               </CardHeader>
-              <CardContent className="relative z-10">
+              <CardContent>
                 <div className="flex flex-wrap gap-2">
                   {system.tags.map((tag, i) => (
                     <Badge key={i} variant="outline" className="border-accent/50 text-accent text-xs">

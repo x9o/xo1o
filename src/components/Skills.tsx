@@ -1,6 +1,5 @@
 import { Code2, Database, Zap, Layers, ShoppingCart, Gamepad2 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-import { GlowingEffect } from "@/components/ui/glowing-effect";
 
 const skills = [
   {
@@ -52,18 +51,10 @@ const Skills = () => {
           {skills.map((skill, index) => (
             <Card 
               key={index}
-              className="relative bg-card border-border transition-all duration-300 group overflow-hidden"
+              className="bg-card border-border hover:border-primary transition-all duration-300 card-glow group"
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <GlowingEffect
-                spread={40}
-                glow={true}
-                disabled={false}
-                proximity={80}
-                inactiveZone={0.01}
-                borderWidth={2}
-              />
-              <CardContent className="relative p-6 z-10">
+              <CardContent className="p-6">
                 <div className="flex items-start gap-4">
                   <div className="p-3 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
                     <skill.icon className="h-6 w-6 text-primary" />
