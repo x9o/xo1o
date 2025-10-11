@@ -16,7 +16,7 @@ const releasedGames = [
     role: "Full Development",
     status: "Released",
     tags: ["Full Stack", "Monetization", "Game Systems"],
-    imageUrl: "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=800&h=600&fit=crop&crop=center&auto=format&q=80" // Roblox game screenshot
+    imageUrl: "https://tr.rbxcdn.com/180DAY-473399814d57d63f73e44d7ba2d3bf46/768/432/Image/Webp/noFilter" // Roblox game screenshot
   },
   {
     title: "Miami 1986",
@@ -24,7 +24,7 @@ const releasedGames = [
     role: "Core Scripter",
     status: "Active Development",
     tags: ["Combat", "Systems", "Physics"],
-    imageUrl: "https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?w=800&h=600&fit=crop&crop=center&auto=format&q=80" // Gaming screenshot
+    imageUrl: "https://tr.rbxcdn.com/180DAY-d3f26b91f5e7d83300fdcf44b4193da7/768/432/Image/Webp/noFilter" // Gaming screenshot
   }
 ];
 
@@ -41,14 +41,14 @@ const unreleasedGames = [
     description: "Fully scripted by me.",
     role: "Full Development",
     tags: ["Complete System", "Advanced Mechanics"],
-    videoUrl: "https://videos.pexels.com/video-files/30333849/13003128_2560_1440_25fps.mp4" // Replace with your game video
+    videoUrl: "https://youtu.be/X2kgIgzRH2s" // Replace with your game video
   },
   {
     title: "Smash Legends",
     description: "Fully scripted by me.",
     role: "Full Development",
     tags: ["Combat", "Character Systems"],
-    videoUrl: "https://videos.pexels.com/video-files/30333849/13003128_2560_1440_25fps.mp4" // Replace with your game video
+    videoUrl: "https://youtu.be/IXgdFqOi28Y" // Replace with your game video
   },
   {
     title: "Don't Touch it!",
@@ -62,7 +62,7 @@ const unreleasedGames = [
     description: "Advanced mechanics implementation",
     role: "Mechanics Developer",
     tags: ["Physics", "Player Systems"],
-    videoUrl: "https://videos.pexels.com/video-files/30333849/13003128_2560_1440_25fps.mp4" // Replace with your game video
+    videoUrl: "https://youtu.be/lYoSqpGbvfg" // Replace with your game video
   }
 ];
 

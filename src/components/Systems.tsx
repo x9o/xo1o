@@ -11,35 +11,35 @@ const systems = [
     description: "VFX, SFX and Animations not created by me, remake from heroes battlegrounds",
     icon: Sparkles,
     tags: ["Combat", "VFX", "Skill System"],
-    videoUrl: "https://videos.pexels.com/video-files/30333849/13003128_2560_1440_25fps.mp4" // Replace with your system demo
+    videoUrl: "https://www.youtube.com/watch?v=qHOpq5fvPY8" // Replace with your system demo
   },
   {
     title: "Full Pet System",
     description: "Including the inventory, equip functionality and pet hover/follow. Pet models are placeholder freemods",
     icon: PawPrint,
     tags: ["Inventory", "Systems", "Pets"],
-    videoUrl: "https://videos.pexels.com/video-files/30333849/13003128_2560_1440_25fps.mp4" // Replace with your system demo
+    videoUrl: "https://youtu.be/oKImINNybZ8" // Replace with your system demo
   },
   {
     title: "Pet Hatching/Rolling Animation",
     description: "VFX and pet models are placeholder freemods, scripted by me.",
     icon: PawPrint,
     tags: ["Animation", "VFX", "Monetization"],
-    videoUrl: "https://videos.pexels.com/video-files/30333849/13003128_2560_1440_25fps.mp4" // Replace with your system demo
+    videoUrl: "https://www.youtube.com/watch?v=3tJj6wgwNrE" // Replace with your system demo
   },
   {
     title: "Lightning Skill with Map Destruction",
     description: "VFX, SFX and Animations not created by me",
     icon: Zap,
     tags: ["Physics", "Combat", "Destruction"],
-    videoUrl: "https://videos.pexels.com/video-files/30333849/13003128_2560_1440_25fps.mp4" // Replace with your system demo
+    videoUrl: "https://youtu.be/kFlqp30BkyU" // Replace with your system demo
   },
   {
     title: "Weapon Combat + Movement System",
     description: "Complete combat system with advanced movement mechanics",
     icon: Sword,
     tags: ["Combat", "Movement", "Weapons"],
-    videoUrl: "https://videos.pexels.com/video-files/30333849/13003128_2560_1440_25fps.mp4" // Replace with your system demo
+    videoUrl: "https://youtu.be/vujfuxX9gUY?si=PxKm0iD_CFwhizcP" // Replace with your system demo
   }
 ];
 
