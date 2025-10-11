@@ -1,6 +1,5 @@
 import { SparklesCore } from "@/components/ui/sparkles";
 import { AnimatedHeader } from "@/components/ui/animated-header";
-import { StarBorder } from "@/components/ui/star-border";
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
 
 const Hero = () => {
@@ -38,26 +37,22 @@ const Hero = () => {
         </p>
 
         <div className="flex flex-wrap gap-4 justify-center mb-12">
-          <StarBorder speed="8s">
-            <InteractiveHoverButton
-              text="View Projects"
-              className="bg-primary hover:bg-primary text-primary-foreground font-semibold px-8 py-6 text-lg w-auto card-glow border-primary"
-              onClick={() => {
-                const projectsSection = document.getElementById('projects');
-                projectsSection?.scrollIntoView({ behavior: 'smooth' });
-              }}
-            />
-          </StarBorder>
-          <StarBorder speed="10s">
-            <InteractiveHoverButton
-              text="Contact Me"
-              className="bg-background hover:bg-primary text-foreground hover:text-primary-foreground font-semibold px-8 py-6 text-lg w-auto border-2 border-primary"
-              onClick={() => {
-                const contactSection = document.getElementById('contact');
-                contactSection?.scrollIntoView({ behavior: 'smooth' });
-              }}
-            />
-          </StarBorder>
+          <InteractiveHoverButton
+            text="View Projects"
+            className="bg-primary text-primary-foreground font-semibold px-8 py-6 text-lg w-auto card-glow border-primary"
+            onClick={() => {
+              const projectsSection = document.getElementById('projects');
+              projectsSection?.scrollIntoView({ behavior: 'smooth' });
+            }}
+          />
+          <InteractiveHoverButton
+            text="Contact Me"
+            className="bg-background text-foreground font-semibold px-8 py-6 text-lg w-auto border-2 border-primary"
+            onClick={() => {
+              const contactSection = document.getElementById('contact');
+              contactSection?.scrollIntoView({ behavior: 'smooth' });
+            }}
+          />
         </div>
       </div>
     </section>
