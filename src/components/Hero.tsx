@@ -4,7 +4,7 @@ import { SparklesCore } from "@/components/ui/sparkles";
 
 const Hero = () => {
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden px-4">
+    <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden px-4">
       {/* Sparkles Background */}
       <div className="w-full absolute inset-0 h-screen">
         <SparklesCore
