@@ -52,7 +52,7 @@ const Skills = () => {
           {skills.map((skill, index) => (
             <Card 
               key={index}
-              className="relative bg-card border-border hover:border-primary transition-all duration-300 group overflow-hidden"
+              className="relative bg-card border-border transition-all duration-300 group overflow-hidden"
               style={{ animationDelay: `${index * 100}ms` }}
             >
               <GlowingEffect
