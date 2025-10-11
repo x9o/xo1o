@@ -3,6 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ExternalLink } from "lucide-react";
 import VideoPlayer from "@/components/ui/video-player";
+import { GradientCard } from "@/components/ui/gradient-card";
 
 const releasedGames = [
   {
@@ -83,44 +84,45 @@ const Projects = () => {
           <TabsContent value="released" className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {releasedGames.map((game, index) => (
-                <Card 
-                  key={index}
-                  className="bg-card border-border hover:border-primary transition-all duration-300 card-glow group overflow-hidden"
-                >
-                  {game.videoUrl && (
-                    <div className="w-full">
-                      <VideoPlayer src={game.videoUrl} />
-                    </div>
-                  )}
-                  <CardHeader>
-                    <div className="flex items-start justify-between mb-2">
-                      <CardTitle className="text-2xl group-hover:text-primary transition-colors">
-                        {game.title}
-                      </CardTitle>
-                      <ExternalLink className="h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors" />
-                    </div>
-                    <CardDescription className="text-base">{game.description}</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="space-y-3">
-                      <div className="flex items-center gap-2">
-                        <Badge variant="outline" className="border-primary text-primary">
-                          {game.role}
-                        </Badge>
-                        <Badge variant="secondary">
-                          {game.status}
-                        </Badge>
+                <GradientCard key={index}>
+                  <Card 
+                    className="bg-transparent border-0 group overflow-hidden h-full"
+                  >
+                    {game.videoUrl && (
+                      <div className="w-full">
+                        <VideoPlayer src={game.videoUrl} />
                       </div>
-                      <div className="flex flex-wrap gap-2">
-                        {game.tags.map((tag, i) => (
-                          <Badge key={i} variant="outline" className="text-xs">
-                            {tag}
+                    )}
+                    <CardHeader>
+                      <div className="flex items-start justify-between mb-2">
+                        <CardTitle className="text-2xl group-hover:text-primary transition-colors">
+                          {game.title}
+                        </CardTitle>
+                        <ExternalLink className="h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors" />
+                      </div>
+                      <CardDescription className="text-base">{game.description}</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="space-y-3">
+                        <div className="flex items-center gap-2">
+                          <Badge variant="outline" className="border-primary text-primary">
+                            {game.role}
                           </Badge>
-                        ))}
+                          <Badge variant="secondary">
+                            {game.status}
+                          </Badge>
+                        </div>
+                        <div className="flex flex-wrap gap-2">
+                          {game.tags.map((tag, i) => (
+                            <Badge key={i} variant="outline" className="text-xs">
+                              {tag}
+                            </Badge>
+                          ))}
+                        </div>
                       </div>
-                    </div>
-                  </CardContent>
-                </Card>
+                    </CardContent>
+                  </Card>
+                </GradientCard>
               ))}
             </div>
           </TabsContent>
@@ -128,39 +130,37 @@ const Projects = () => {
           <TabsContent value="unreleased" className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {unreleasedGames.map((game, index) => (
-                <Card 
-                  key={index}
-                  className="bg-card border-border hover:border-secondary transition-all duration-300 group overflow-hidden"
-                  style={{ 
-                    boxShadow: '0 0 30px hsl(270 80% 65% / 0.1)',
-                  }}
-                >
-                  {game.videoUrl && (
-                    <div className="w-full">
-                      <VideoPlayer src={game.videoUrl} />
-                    </div>
-                  )}
-                  <CardHeader>
-                    <CardTitle className="text-xl group-hover:text-secondary transition-colors">
-                      {game.title}
-                    </CardTitle>
-                    <CardDescription>{game.description}</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="space-y-3">
-                      <Badge variant="outline" className="border-secondary text-secondary">
-                        {game.role}
-                      </Badge>
-                      <div className="flex flex-wrap gap-2">
-                        {game.tags.map((tag, i) => (
-                          <Badge key={i} variant="outline" className="text-xs">
-                            {tag}
-                          </Badge>
-                        ))}
+                <GradientCard key={index}>
+                  <Card 
+                    className="bg-transparent border-0 group overflow-hidden h-full"
+                  >
+                    {game.videoUrl && (
+                      <div className="w-full">
+                        <VideoPlayer src={game.videoUrl} />
                       </div>
-                    </div>
-                  </CardContent>
-                </Card>
+                    )}
+                    <CardHeader>
+                      <CardTitle className="text-xl group-hover:text-secondary transition-colors">
+                        {game.title}
+                      </CardTitle>
+                      <CardDescription>{game.description}</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="space-y-3">
+                        <Badge variant="outline" className="border-secondary text-secondary">
+                          {game.role}
+                        </Badge>
+                        <div className="flex flex-wrap gap-2">
+                          {game.tags.map((tag, i) => (
+                            <Badge key={i} variant="outline" className="text-xs">
+                              {tag}
+                            </Badge>
+                          ))}
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </GradientCard>
               ))}
             </div>
           </TabsContent>

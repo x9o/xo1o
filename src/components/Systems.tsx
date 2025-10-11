@@ -2,6 +2,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Sparkles, PawPrint, Zap, Sword } from "lucide-react";
 import VideoPlayer from "@/components/ui/video-player";
+import { GradientCard } from "@/components/ui/gradient-card";
 
 const systems = [
   {
@@ -56,43 +57,41 @@ const Systems = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
           {systems.map((system, index) => (
-            <Card 
-              key={index}
-              className="bg-card border-border hover:border-accent transition-all duration-300 group overflow-hidden"
-              style={{ 
-                boxShadow: '0 0 30px hsl(180 100% 60% / 0.1)',
-              }}
-            >
-              {system.videoUrl && (
-                <div className="w-full">
-                  <VideoPlayer src={system.videoUrl} />
-                </div>
-              )}
-              <CardHeader>
-                <div className="flex items-start gap-4">
-                  <div className="p-3 rounded-lg bg-accent/10 group-hover:bg-accent/20 transition-colors">
-                    <system.icon className="h-6 w-6 text-accent" />
+            <GradientCard key={index}>
+              <Card 
+                className="bg-transparent border-0 group overflow-hidden h-full"
+              >
+                {system.videoUrl && (
+                  <div className="w-full">
+                    <VideoPlayer src={system.videoUrl} />
                   </div>
-                  <div className="flex-1">
-                    <CardTitle className="text-xl group-hover:text-accent transition-colors mb-2">
-                      {system.title}
-                    </CardTitle>
-                    <CardDescription className="text-sm leading-relaxed">
-                      {system.description}
-                    </CardDescription>
+                )}
+                <CardHeader>
+                  <div className="flex items-start gap-4">
+                    <div className="p-3 rounded-lg bg-accent/10 group-hover:bg-accent/20 transition-colors">
+                      <system.icon className="h-6 w-6 text-accent" />
+                    </div>
+                    <div className="flex-1">
+                      <CardTitle className="text-xl group-hover:text-accent transition-colors mb-2">
+                        {system.title}
+                      </CardTitle>
+                      <CardDescription className="text-sm leading-relaxed">
+                        {system.description}
+                      </CardDescription>
+                    </div>
                   </div>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <div className="flex flex-wrap gap-2">
-                  {system.tags.map((tag, i) => (
-                    <Badge key={i} variant="outline" className="border-accent/50 text-accent text-xs">
-                      {tag}
-                    </Badge>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex flex-wrap gap-2">
+                    {system.tags.map((tag, i) => (
+                      <Badge key={i} variant="outline" className="border-accent/50 text-accent text-xs">
+                        {tag}
+                      </Badge>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            </GradientCard>
           ))}
         </div>
 
