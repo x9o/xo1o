@@ -1,6 +1,7 @@
 import { Github, MessageSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SparklesCore } from "@/components/ui/sparkles";
+import { StarBorder } from "@/components/ui/star-border";
 
 const Hero = () => {
   return (
@@ -34,21 +35,25 @@ const Hero = () => {
         </p>
 
         <div className="flex flex-wrap gap-4 justify-center mb-12">
-          <Button
-            size="lg"
-            className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 py-6 text-lg card-glow"
-          >
-            <Github className="mr-2 h-5 w-5" />
-            View Projects
-          </Button>
-          <Button
-            size="lg"
-            variant="outline"
-            className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground font-semibold px-8 py-6 text-lg"
-          >
-            <MessageSquare className="mr-2 h-5 w-5" />
-            Contact Me
-          </Button>
+          <StarBorder as="div" speed="4s">
+            <Button
+              size="lg"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 py-6 text-lg card-glow w-full"
+            >
+              <Github className="mr-2 h-5 w-5" />
+              View Projects
+            </Button>
+          </StarBorder>
+          <StarBorder as="div" speed="5s">
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground font-semibold px-8 py-6 text-lg w-full"
+            >
+              <MessageSquare className="mr-2 h-5 w-5" />
+              Contact Me
+            </Button>
+          </StarBorder>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
