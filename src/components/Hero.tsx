@@ -1,7 +1,6 @@
 import { Github, MessageSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SparklesCore } from "@/components/ui/sparkles";
-import { GlareCard } from "@/components/ui/glare-card";
 
 const Hero = () => {
   return (
@@ -36,36 +35,20 @@ const Hero = () => {
 
         <div className="flex flex-wrap gap-4 justify-center mb-12">
           <Button
-            size="default"
-            variant="outline"
-            className="border-2 border-primary text-primary hover:bg-primary/10 font-semibold card-glow"
+            size="lg"
+            className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 py-6 text-lg card-glow"
           >
             <Github className="mr-2 h-5 w-5" />
             View Projects
           </Button>
           <Button
-            size="default"
+            size="lg"
             variant="outline"
-            className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground font-semibold"
+            className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground font-semibold px-8 py-6 text-lg"
           >
             <MessageSquare className="mr-2 h-5 w-5" />
             Contact Me
           </Button>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-          <GlareCard className="p-6 flex flex-col items-start justify-center">
-            <h3 className="text-3xl font-bold text-primary mb-2">High Session Time</h3>
-            <p className="text-muted-foreground">Engaging gameplay loops</p>
-          </GlareCard>
-          <GlareCard className="p-6 flex flex-col items-start justify-center">
-            <h3 className="text-3xl font-bold text-secondary mb-2">D1 & D7 Retention</h3>
-            <p className="text-muted-foreground">Players keep coming back</p>
-          </GlareCard>
-          <GlareCard className="p-6 flex flex-col items-start justify-center">
-            <h3 className="text-3xl font-bold text-accent mb-2">High Conversion</h3>
-            <p className="text-muted-foreground">Monetization that works</p>
-          </GlareCard>
         </div>
       </div>
     </section>
