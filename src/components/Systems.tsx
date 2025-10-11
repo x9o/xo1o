@@ -1,37 +1,43 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Sparkles, PawPrint, Zap, Sword } from "lucide-react";
+import VideoPlayer from "@/components/ui/video-player";
 
 const systems = [
   {
     title: "Exploding Star Skill",
     description: "VFX, SFX and Animations not created by me, remake from heroes battlegrounds",
     icon: Sparkles,
-    tags: ["Combat", "VFX", "Skill System"]
+    tags: ["Combat", "VFX", "Skill System"],
+    videoUrl: "https://videos.pexels.com/video-files/30333849/13003128_2560_1440_25fps.mp4" // Replace with your system demo
   },
   {
     title: "Full Pet System",
     description: "Including the inventory, equip functionality and pet hover/follow. Pet models are placeholder freemods",
     icon: PawPrint,
-    tags: ["Inventory", "Systems", "Pets"]
+    tags: ["Inventory", "Systems", "Pets"],
+    videoUrl: "https://videos.pexels.com/video-files/30333849/13003128_2560_1440_25fps.mp4" // Replace with your system demo
   },
   {
     title: "Pet Hatching/Rolling Animation",
     description: "VFX and pet models are placeholder freemods, scripted by me.",
     icon: PawPrint,
-    tags: ["Animation", "VFX", "Monetization"]
+    tags: ["Animation", "VFX", "Monetization"],
+    videoUrl: "https://videos.pexels.com/video-files/30333849/13003128_2560_1440_25fps.mp4" // Replace with your system demo
   },
   {
     title: "Lightning Skill with Map Destruction",
     description: "VFX, SFX and Animations not created by me",
     icon: Zap,
-    tags: ["Physics", "Combat", "Destruction"]
+    tags: ["Physics", "Combat", "Destruction"],
+    videoUrl: "https://videos.pexels.com/video-files/30333849/13003128_2560_1440_25fps.mp4" // Replace with your system demo
   },
   {
     title: "Weapon Combat + Movement System",
     description: "Complete combat system with advanced movement mechanics",
     icon: Sword,
-    tags: ["Combat", "Movement", "Weapons"]
+    tags: ["Combat", "Movement", "Weapons"],
+    videoUrl: "https://videos.pexels.com/video-files/30333849/13003128_2560_1440_25fps.mp4" // Replace with your system demo
   }
 ];
 
@@ -57,6 +63,11 @@ const Systems = () => {
                 boxShadow: '0 0 30px hsl(180 100% 60% / 0.1)',
               }}
             >
+              {system.videoUrl && (
+                <div className="w-full">
+                  <VideoPlayer src={system.videoUrl} />
+                </div>
+              )}
               <CardHeader>
                 <div className="flex items-start gap-4">
                   <div className="p-3 rounded-lg bg-accent/10 group-hover:bg-accent/20 transition-colors">
