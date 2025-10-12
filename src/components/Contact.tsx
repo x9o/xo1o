@@ -1,4 +1,4 @@
-import { MessageSquare, Github } from "lucide-react";
+import { SiDiscord, SiRoblox, SiGithub } from "react-icons/si";
 import { AnimatedHeader } from "@/components/ui/animated-header";
 import DisplayCards from "@/components/ui/display-cards";
 
@@ -19,7 +19,7 @@ const Contact = () => {
           <DisplayCards
             cards={[
               {
-                icon: <MessageSquare className="size-4 text-primary-foreground" />,
+                icon: <SiDiscord className="size-4 text-primary-foreground" />,
                 title: "Discord",
                 description: "xo1o",
                 date: "Message me",
@@ -30,7 +30,7 @@ const Contact = () => {
                   "[grid-area:stack] hover:-translate-y-10 before:absolute before:w-[100%] before:outline-1 before:rounded-xl before:outline-border before:h-[100%] before:content-[''] before:bg-blend-overlay before:bg-background/50 grayscale-[100%] hover:before:opacity-0 before:transition-opacity before:duration-700 hover:grayscale-0 before:left-0 before:top-0",
               },
               {
-                icon: <Github className="size-4 text-accent-foreground" />,
+                icon: <SiRoblox className="size-4 text-accent-foreground" />,
                 title: "Roblox",
                 description: "X0L00X",
                 date: "View Profile",
@@ -41,7 +41,7 @@ const Contact = () => {
                   "[grid-area:stack] translate-x-16 translate-y-10 hover:-translate-y-1 before:absolute before:w-[100%] before:outline-1 before:rounded-xl before:outline-border before:h-[100%] before:content-[''] before:bg-blend-overlay before:bg-background/50 grayscale-[100%] hover:before:opacity-0 before:transition-opacity before:duration-700 hover:grayscale-0 before:left-0 before:top-0",
               },
               {
-                icon: <Github className="size-4 text-accent-foreground" />,
+                icon: <SiGithub className="size-4 text-accent-foreground" />,
                 title: "GitHub",
                 description: "x9o",
                 date: "View Profile",
