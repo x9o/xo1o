@@ -17,8 +17,8 @@ const Contact = () => {
           </p>
         </div>
 
-        <div className="bg-card border border-border rounded-lg p-8 md:p-12 card-glow">
-          <div className="flex justify-center mb-8 min-h-[500px] items-center">
+        <div className="bg-card border border-border rounded-lg p-8 md:p-12">
+          <div className="flex justify-center mb-4 min-h-[500px] items-center">
             <DisplayCards
               cards={[
                 {
@@ -62,7 +62,7 @@ const Contact = () => {
             />
           </div>
 
-          <div className="text-center pt-6 border-t border-border">
+          <div className="text-center pt-4 border-t border-border">
             <p className="text-muted-foreground mb-2">Also find me on X (Twitter)</p>
             <a 
               href="https://x.com/xoloware" 
