@@ -94,8 +94,17 @@ export const MatrixText = ({
 
     useEffect(() => {
         const timer = setTimeout(startAnimation, initialDelay);
-        return () => clearTimeout(timer);
-    }, []);
+        
+        // Set up interval to repeat animation every 5 seconds
+        const interval = setInterval(() => {
+            startAnimation();
+        }, 5000);
+        
+        return () => {
+            clearTimeout(timer);
+            clearInterval(interval);
+        };
+    }, [startAnimation, initialDelay]);
 
     const motionVariants = useMemo(
         () => ({
