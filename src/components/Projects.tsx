@@ -45,7 +45,8 @@ const unreleasedGames = [
     description: "Fully scripted by me.",
     role: "Full Development",
     tags: ["Complete System", "Advanced Mechanics"],
-    videoUrl: "https://youtu.be/X2kgIgzRH2s",
+    videoUrl:
+      "https://cdn.discordapp.com/attachments/1392828475060129995/1426783662799851642/2025-06-02_18-38-09.mp4?ex=68ec7b55&is=68eb29d5&hm=2388a219817a8449c28325d3d08c5dab49139cc550b26b5e232cd8f3b589c62a&",
     link: "https://youtu.be/X2kgIgzRH2s",
   },
   {
