@@ -54,7 +54,8 @@ const unreleasedGames = [
     description: "Fully scripted by me.",
     role: "Full Development",
     tags: ["Combat", "Character Systems"],
-    videoUrl: "https://youtu.be/IXgdFqOi28Y",
+    videoUrl:
+      "https://cdn.discordapp.com/attachments/1392828475060129995/1426784195941892167/2025-04-10_22-26-27.mp4?ex=68ec7bd4&is=68eb2a54&hm=afa06605ae79ee55e2cd4c9327241092a7b9a35f8eb8d1089dc518e2bde84d0d&",
     link: "https://youtu.be/IXgdFqOi28Y",
   },
   {
