@@ -1,6 +1,7 @@
 import { GalaxyBackground } from "@/components/ui/galaxy-background";
 import { MatrixText } from "@/components/ui/matrix-text";
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
+import InteractiveScrambledText from "@/components/ui/interactive-scrambled-text";
 import { memo, useCallback } from "react";
 
 const Hero = memo(() => {
@@ -34,11 +35,15 @@ const Hero = memo(() => {
           <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-primary via-secondary to-accent blur-sm" /> */}
         </div>
 
-        <p className="text-xl md:text-2xl text-white/80 mb-8 max-w-3xl mx-auto leading-relaxed">
-        Hey! I'm xo1o, a professional Roblox scripter with 3+ years of experience building 
-        complex game systems. I specialize in clean Lua code, optimized performance, and 
-        scalable architectures.
-        </p>
+        <InteractiveScrambledText
+          radius={120}
+          duration={1.2}
+          speed={0.5}
+          scrambleChars="01"
+          className="text-xl md:text-2xl text-white/80 mb-8 max-w-3xl mx-auto leading-relaxed font-sans"
+        >
+          Hey! I'm xo1o, a professional Roblox scripter with 3+ years of experience building complex game systems. I specialize in clean Lua code, optimized performance, and scalable architectures.
+        </InteractiveScrambledText>
 
         <div className="flex flex-wrap gap-4 justify-center mb-12">
           <InteractiveHoverButton
