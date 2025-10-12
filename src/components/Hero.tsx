@@ -1,17 +1,17 @@
 import { GalaxyBackground } from "@/components/ui/galaxy-background";
-import { AnimatedHeader } from "@/components/ui/animated-header";
+import { MatrixText } from "@/components/ui/matrix-text";
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
 import { memo, useCallback } from "react";
 
 const Hero = memo(() => {
   const scrollToProjects = useCallback(() => {
-    const projectsSection = document.getElementById("projects");
-    projectsSection?.scrollIntoView({ behavior: "smooth" });
+    const projectsSection = document.getElementById('projects');
+    projectsSection?.scrollIntoView({ behavior: 'smooth' });
   }, []);
 
   const scrollToContact = useCallback(() => {
-    const contactSection = document.getElementById("contact");
-    contactSection?.scrollIntoView({ behavior: "smooth" });
+    const contactSection = document.getElementById('contact');
+    contactSection?.scrollIntoView({ behavior: 'smooth' });
   }, []);
 
   return (
@@ -22,9 +22,12 @@ const Hero = memo(() => {
 
       <div className="container mx-auto text-center z-10 animate-fade-in">
         <div className="relative inline-block mb-6">
-          <AnimatedHeader
-            text="xo1o's scripting portfolio"
+          <MatrixText 
+            text="xo1o"
             className="text-5xl md:text-7xl lg:text-8xl font-bold text-white"
+            initialDelay={500}
+            letterAnimationDuration={300}
+            letterInterval={80}
           />
           {/* Animated underline */}
           <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-primary via-secondary to-accent animate-pulse" />
@@ -32,8 +35,8 @@ const Hero = memo(() => {
         </div>
 
         <p className="text-xl md:text-2xl text-white/80 mb-8 max-w-3xl mx-auto leading-relaxed">
-          Professional Roblox scripter with 3+ years of experience crafting games with high retention, smooth mechanics,
-          and monetization systems that convert.
+          Professional Roblox scripter with 3+ years of experience
+          crafting games with high retention, smooth mechanics, and monetization systems that convert.
         </p>
 
         <div className="flex flex-wrap gap-4 justify-center mb-12">
@@ -53,6 +56,6 @@ const Hero = memo(() => {
   );
 });
 
-Hero.displayName = "Hero";
+Hero.displayName = 'Hero';
 
 export default Hero;
