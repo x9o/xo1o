@@ -98,7 +98,7 @@ export const MatrixText = ({
         // Set up interval to repeat animation every 5 seconds
         const interval = setInterval(() => {
             startAnimation();
-        }, 5000);
+        }, 25000);
         
         return () => {
             clearTimeout(timer);

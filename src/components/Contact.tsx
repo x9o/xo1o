@@ -15,7 +15,7 @@ const Contact = () => {
           <p className="text-muted-foreground text-lg">Ready to build the next hit Roblox game?</p>
         </div>
 
-        <div className="flex justify-center min-h-[350px] items-center -ml-8">
+        <div className="flex justify-center min-h-[400px] items-center -ml-12">
           <DisplayCards
             cards={[
               {

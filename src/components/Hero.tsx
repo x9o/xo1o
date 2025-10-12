@@ -23,20 +23,19 @@ const Hero = memo(() => {
       <div className="container mx-auto text-center z-10 animate-fade-in">
         <div className="relative inline-block mb-6">
           <MatrixText 
-            text="xo1o"
+            text="Bringing Your Visions to Life"
             className="text-5xl md:text-7xl lg:text-8xl font-bold text-white"
             initialDelay={500}
             letterAnimationDuration={300}
             letterInterval={80}
           />
           {/* Animated underline */}
-          <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-primary via-secondary to-accent animate-pulse" />
-          <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-primary via-secondary to-accent blur-sm" />
+          {/* <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-primary via-secondary to-accent animate-pulse" />
+          <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-primary via-secondary to-accent blur-sm" /> */}
         </div>
 
         <p className="text-xl md:text-2xl text-white/80 mb-8 max-w-3xl mx-auto leading-relaxed">
-          Professional Roblox scripter with 3+ years of experience
-          crafting games with high retention, smooth mechanics, and monetization systems that convert.
+         Hey! I'm xo1o, a Roblox scripter with 3+ years of experience programming and building Roblox games. I specialize in clean, scalable code and systems that create engaging experiences from day one.
         </p>
 
         <div className="flex flex-wrap gap-4 justify-center mb-12">
