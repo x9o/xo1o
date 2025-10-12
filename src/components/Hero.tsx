@@ -35,7 +35,9 @@ const Hero = memo(() => {
         </div>
 
         <p className="text-xl md:text-2xl text-white/80 mb-8 max-w-3xl mx-auto leading-relaxed">
-         Hey! I'm xo1o, a Roblox scripter with 3+ years of experience programming and building Roblox games. I specialize in clean, scalable code and systems that create engaging experiences from day one.
+        Hey! I'm xo1o, a professional Roblox scripter with 3+ years of experience building 
+        complex game systems. I specialize in clean Lua code, optimized performance, and 
+        scalable architectures.
         </p>
 
         <div className="flex flex-wrap gap-4 justify-center mb-12">

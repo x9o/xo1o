@@ -116,6 +116,66 @@ export const MatrixText = ({
         []
     );
 
+    // Render letters grouped into word containers so words don't break across lines.
+    const renderWords = () => {
+        const nodes: React.ReactNode[] = [];
+        let i = 0;
+
+        while (i < letters.length) {
+            const letter = letters[i];
+
+            if (letter.isSpace) {
+                // Render spaces as a single non-breaking space element
+                nodes.push(
+                    <motion.div
+                        key={`space-${i}`}
+                        className="font-mono w-[1ch] text-center overflow-hidden"
+                        initial="initial"
+                        animate={letter.isMatrix ? "matrix" : "normal"}
+                        variants={motionVariants}
+                        transition={{ duration: 0.1, ease: "easeInOut" }}
+                        style={{ display: "inline-block", fontVariantNumeric: "tabular-nums" }}
+                    >
+                        {"\u00A0"}
+                    </motion.div>
+                );
+                i++;
+                continue;
+            }
+
+            // Collect a whole word (sequence of non-space letters)
+            const start = i;
+            const wordNodes: React.ReactNode[] = [];
+
+            while (i < letters.length && !letters[i].isSpace) {
+                const l = letters[i];
+                wordNodes.push(
+                    <motion.div
+                        key={`${i}-${l.char}`}
+                        className="font-mono w-[1ch] text-center overflow-hidden"
+                        initial="initial"
+                        animate={l.isMatrix ? "matrix" : "normal"}
+                        variants={motionVariants}
+                        transition={{ duration: 0.1, ease: "easeInOut" }}
+                        style={{ display: "inline-block", fontVariantNumeric: "tabular-nums" }}
+                    >
+                        {l.char}
+                    </motion.div>
+                );
+                i++;
+            }
+
+            // Wrap the word's letters in an inline-flex container with no wrapping between letters
+            nodes.push(
+                <span key={`word-${start}`} className="inline-flex whitespace-nowrap">
+                    {wordNodes}
+                </span>
+            );
+        }
+
+        return nodes;
+    };
+
     return (
         <div
             className={cn(

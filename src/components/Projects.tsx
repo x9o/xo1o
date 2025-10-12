@@ -17,16 +17,16 @@ const releasedGames = [
     status: "Released",
     tags: ["Full Stack", "Monetization", "Game Systems"],
     imageUrl: "https://tr.rbxcdn.com/180DAY-473399814d57d63f73e44d7ba2d3bf46/768/432/Image/Webp/noFilter",
-    link: "https://www.roblox.com/games/18690533832/Steal-A-Streamer",
+    link: "https://www.roblox.com/games/78545085335980/Steal-a-Streamer",
   },
   {
     title: "Miami 1986",
     description: "Currently a scripter for the game.",
     role: "Core Scripter",
     status: "Active Development",
-    tags: ["Combat", "Systems", "Physics"],
+    tags: ["Systems"],
     imageUrl: "https://tr.rbxcdn.com/180DAY-d3f26b91f5e7d83300fdcf44b4193da7/768/432/Image/Webp/noFilter",
-    link: "https://www.roblox.com/games/17869980823/Miami-1986",
+    link: "https://www.roblox.com/games/4780772099/Miami-1986",
   },
 ];
 
@@ -62,10 +62,10 @@ const unreleasedGames = [
     title: "Don't Touch it!",
     description: "Core systems development",
     role: "Systems Developer",
-    tags: ["Physics", "Game Logic"],
+    tags: ["Game Logic"],
     videoUrl:
       "https://cdn.discordapp.com/attachments/1424168905307459644/1424168907153084446/wa.mp4?ex=68ec32a7&is=68eae127&hm=22125351bdb3c95dfbdebe17de7897562469b776e7d623cd1a7ade2ef336bea3&",
-    link: "https://videos.pexels.com/video-files/30333849/13003128_2560_1440_25fps.mp4",
+    link: "",
   },
   {
     title: "Acid Escape",
