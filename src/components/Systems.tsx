@@ -11,36 +11,37 @@ const systems = [
     description: "VFX, SFX and Animations not created by me, remake from heroes battlegrounds",
     icon: Sparkles,
     tags: ["Combat", "VFX", "Skill System"],
-    videoUrl: "https://www.youtube.com/watch?v=qHOpq5fvPY8" // Replace with your system demo
+    videoUrl: "https://files.catbox.moe/rc6ajq.mkv", // Replace with your system demo
   },
   {
     title: "Full Pet System",
-    description: "Including the inventory, equip functionality and pet hover/follow. Pet models are placeholder freemods",
+    description:
+      "Including the inventory, equip functionality and pet hover/follow. Pet models are placeholder freemods",
     icon: PawPrint,
     tags: ["Inventory", "Systems", "Pets"],
-    videoUrl: "https://youtu.be/oKImINNybZ8" // Replace with your system demo
+    videoUrl: "https://youtu.be/oKImINNybZ8", // Replace with your system demo
   },
   {
     title: "Pet Hatching/Rolling Animation",
     description: "VFX and pet models are placeholder freemods, scripted by me.",
     icon: PawPrint,
     tags: ["Animation", "VFX", "Monetization"],
-    videoUrl: "https://www.youtube.com/watch?v=3tJj6wgwNrE" // Replace with your system demo
+    videoUrl: "https://www.youtube.com/watch?v=3tJj6wgwNrE", // Replace with your system demo
   },
   {
     title: "Lightning Skill with Map Destruction",
     description: "VFX, SFX and Animations not created by me",
     icon: Zap,
     tags: ["Physics", "Combat", "Destruction"],
-    videoUrl: "https://youtu.be/kFlqp30BkyU" // Replace with your system demo
+    videoUrl: "https://youtu.be/kFlqp30BkyU", // Replace with your system demo
   },
   {
     title: "Weapon Combat + Movement System",
     description: "Complete combat system with advanced movement mechanics",
     icon: Sword,
     tags: ["Combat", "Movement", "Weapons"],
-    videoUrl: "https://youtu.be/vujfuxX9gUY?si=PxKm0iD_CFwhizcP" // Replace with your system demo
-  }
+    videoUrl: "https://youtu.be/vujfuxX9gUY?si=PxKm0iD_CFwhizcP", // Replace with your system demo
+  },
 ];
 
 const Systems = () => {
@@ -48,22 +49,18 @@ const Systems = () => {
     <section className="py-20 px-4" id="systems">
       <div className="container mx-auto">
         <div className="text-center mb-16 animate-fade-in">
-          <AnimatedHeader 
+          <AnimatedHeader
             text="Featured Systems"
             gradientText="Systems"
             className="text-4xl md:text-5xl font-bold mb-4"
           />
-          <p className="text-muted-foreground text-lg">
-            Custom systems and mechanics I've developed
-          </p>
+          <p className="text-muted-foreground text-lg">Custom systems and mechanics I've developed</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
           {systems.map((system, index) => (
             <GradientCard key={index}>
-              <Card 
-                className="bg-transparent border-0 group overflow-hidden h-full"
-              >
+              <Card className="bg-transparent border-0 group overflow-hidden h-full">
                 {system.videoUrl && (
                   <div className="w-full">
                     <VideoPlayer src={system.videoUrl} />
@@ -78,9 +75,7 @@ const Systems = () => {
                       <CardTitle className="text-xl group-hover:text-accent transition-colors mb-2">
                         {system.title}
                       </CardTitle>
-                      <CardDescription className="text-sm leading-relaxed">
-                        {system.description}
-                      </CardDescription>
+                      <CardDescription className="text-sm leading-relaxed">{system.description}</CardDescription>
                     </div>
                   </div>
                 </CardHeader>
@@ -100,7 +95,8 @@ const Systems = () => {
 
         <div className="mt-12 text-center">
           <p className="text-muted-foreground italic">
-            Note: VFX, SFX, and animations mentioned are from original sources. All scripting and implementation is original work.
+            Note: VFX, SFX, and animations mentioned are from original sources. All scripting and implementation is
+            original work.
           </p>
         </div>
       </div>
