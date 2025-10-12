@@ -72,7 +72,8 @@ const unreleasedGames = [
     description: "Advanced mechanics implementation",
     role: "Mechanics Developer",
     tags: ["Physics", "Player Systems"],
-    videoUrl: "https://youtu.be/lYoSqpGbvfg",
+    videoUrl:
+      "https://cdn.discordapp.com/attachments/1392828475060129995/1426784488209252476/2025-08-25_18-54-35.mp4?ex=68ec7c1a&is=68eb2a9a&hm=1b3a50ba3cab70ccdcf9bbc37eb237709b8792d78eb7154369b8a1df4ec4d324&",
     link: "https://youtu.be/lYoSqpGbvfg",
   },
 ];
