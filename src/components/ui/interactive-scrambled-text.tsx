@@ -100,7 +100,7 @@ const InteractiveScrambledText: FC<InteractiveScrambledTextProps> = ({
   return (
     <div
       ref={rootRef}
-      className={`font-mono text-[clamp(14px,4vw,32px)] text-neutral-800 dark:text-neutral-200 transition-colors duration-300 ${className}`}
+      className={className}
       style={style}
     >
       <p>{children}</p>
