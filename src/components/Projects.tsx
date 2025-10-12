@@ -17,7 +17,7 @@ const releasedGames = [
     status: "Released",
     tags: ["Full Stack", "Monetization", "Game Systems"],
     imageUrl: "https://tr.rbxcdn.com/180DAY-473399814d57d63f73e44d7ba2d3bf46/768/432/Image/Webp/noFilter",
-    link: "https://www.roblox.com/games/18690533832/Steal-A-Streamer"
+    link: "https://www.roblox.com/games/18690533832/Steal-A-Streamer",
   },
   {
     title: "Miami 1986",
@@ -26,8 +26,8 @@ const releasedGames = [
     status: "Active Development",
     tags: ["Combat", "Systems", "Physics"],
     imageUrl: "https://tr.rbxcdn.com/180DAY-d3f26b91f5e7d83300fdcf44b4193da7/768/432/Image/Webp/noFilter",
-    link: "https://www.roblox.com/games/17869980823/Miami-1986"
-  }
+    link: "https://www.roblox.com/games/17869980823/Miami-1986",
+  },
 ];
 
 const unreleasedGames = [
@@ -37,7 +37,7 @@ const unreleasedGames = [
     role: "Full Development",
     tags: ["Brainrot", "Systems", "Monetization"],
     videoUrl: "https://youtu.be/JkuypVC5okQ",
-    link: "https://youtu.be/JkuypVC5okQ"
+    link: "https://youtu.be/JkuypVC5okQ",
   },
   {
     title: "Obscured",
@@ -45,7 +45,7 @@ const unreleasedGames = [
     role: "Full Development",
     tags: ["Complete System", "Advanced Mechanics"],
     videoUrl: "https://youtu.be/X2kgIgzRH2s",
-    link: "https://youtu.be/X2kgIgzRH2s"
+    link: "https://youtu.be/X2kgIgzRH2s",
   },
   {
     title: "Smash Legends",
@@ -53,15 +53,16 @@ const unreleasedGames = [
     role: "Full Development",
     tags: ["Combat", "Character Systems"],
     videoUrl: "https://youtu.be/IXgdFqOi28Y",
-    link: "https://youtu.be/IXgdFqOi28Y"
+    link: "https://youtu.be/IXgdFqOi28Y",
   },
   {
     title: "Don't Touch it!",
     description: "Core systems development",
     role: "Systems Developer",
     tags: ["Physics", "Game Logic"],
-    videoUrl: "https://videos.pexels.com/video-files/30333849/13003128_2560_1440_25fps.mp4",
-    link: "https://videos.pexels.com/video-files/30333849/13003128_2560_1440_25fps.mp4"
+    videoUrl:
+      "https://cdn.discordapp.com/attachments/1424168905307459644/1424168907153084446/wa.mp4?ex=68ec32a7&is=68eae127&hm=22125351bdb3c95dfbdebe17de7897562469b776e7d623cd1a7ade2ef336bea3&",
+    link: "https://videos.pexels.com/video-files/30333849/13003128_2560_1440_25fps.mp4",
   },
   {
     title: "Acid Escape",
@@ -69,21 +70,21 @@ const unreleasedGames = [
     role: "Mechanics Developer",
     tags: ["Physics", "Player Systems"],
     videoUrl: "https://youtu.be/lYoSqpGbvfg",
-    link: "https://youtu.be/lYoSqpGbvfg"
-  }
+    link: "https://youtu.be/lYoSqpGbvfg",
+  },
 ];
 
 const TubelightTabs = memo(({ activeTab, onTabChange }: { activeTab: string; onTabChange: (tab: string) => void }) => {
   const tabs = [
     { value: "released", label: "Released" },
-    { value: "unreleased", label: "In Development" }
+    { value: "unreleased", label: "In Development" },
   ];
 
   return (
     <div className="flex items-center gap-2 bg-background/5 border border-border backdrop-blur-lg py-1 px-1 rounded-full shadow-lg w-fit mx-auto mb-12">
       {tabs.map((tab) => {
         const isActive = activeTab === tab.value;
-        
+
         return (
           <button
             key={tab.value}
@@ -120,11 +121,11 @@ const TubelightTabs = memo(({ activeTab, onTabChange }: { activeTab: string; onT
   );
 });
 
-TubelightTabs.displayName = 'TubelightTabs';
+TubelightTabs.displayName = "TubelightTabs";
 
 const Projects = memo(() => {
   const [activeTab, setActiveTab] = useState("released");
-  
+
   const handleTabChange = useCallback((tab: string) => {
     setActiveTab(tab);
   }, []);
@@ -133,14 +134,12 @@ const Projects = memo(() => {
     <section className="py-20 px-4 bg-muted/30" id="projects">
       <div className="container mx-auto">
         <div className="text-center mb-16 animate-fade-in">
-          <AnimatedHeader 
+          <AnimatedHeader
             text="Games I've Worked On"
             gradientText="Worked On"
             className="text-4xl md:text-5xl font-bold mb-4"
           />
-          <p className="text-muted-foreground text-lg">
-            Released titles and upcoming projects
-          </p>
+          <p className="text-muted-foreground text-lg">Released titles and upcoming projects</p>
         </div>
 
         <div className="max-w-6xl mx-auto">
@@ -151,13 +150,11 @@ const Projects = memo(() => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {releasedGames.map((game, index) => (
                   <GradientCard key={index}>
-                    <Card 
-                      className="bg-transparent border-0 group overflow-hidden h-full"
-                    >
+                    <Card className="bg-transparent border-0 group overflow-hidden h-full">
                       {game.imageUrl && (
                         <div className="w-full aspect-video overflow-hidden rounded-t-lg">
-                          <img 
-                            src={game.imageUrl} 
+                          <img
+                            src={game.imageUrl}
                             alt={`${game.title} screenshot`}
                             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                           />
@@ -168,9 +165,9 @@ const Projects = memo(() => {
                           <CardTitle className="text-2xl group-hover:text-primary transition-colors">
                             {game.title}
                           </CardTitle>
-                          <a 
-                            href={game.link} 
-                            target="_blank" 
+                          <a
+                            href={game.link}
+                            target="_blank"
                             rel="noopener noreferrer"
                             className="shrink-0"
                             onClick={(e) => e.stopPropagation()}
@@ -186,9 +183,7 @@ const Projects = memo(() => {
                             <Badge variant="outline" className="border-primary text-primary">
                               {game.role}
                             </Badge>
-                            <Badge variant="secondary">
-                              {game.status}
-                            </Badge>
+                            <Badge variant="secondary">{game.status}</Badge>
                           </div>
                           <div className="flex flex-wrap gap-2">
                             {game.tags.map((tag, i) => (
@@ -211,9 +206,7 @@ const Projects = memo(() => {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {unreleasedGames.map((game, index) => (
                   <GradientCard key={index}>
-                    <Card 
-                      className="bg-transparent border-0 group overflow-hidden h-full"
-                    >
+                    <Card className="bg-transparent border-0 group overflow-hidden h-full">
                       {game.videoUrl && (
                         <div className="w-full">
                           <VideoPlayer src={game.videoUrl} />
@@ -224,9 +217,9 @@ const Projects = memo(() => {
                           <CardTitle className="text-xl group-hover:text-secondary transition-colors">
                             {game.title}
                           </CardTitle>
-                          <a 
-                            href={game.link} 
-                            target="_blank" 
+                          <a
+                            href={game.link}
+                            target="_blank"
                             rel="noopener noreferrer"
                             className="shrink-0"
                             onClick={(e) => e.stopPropagation()}
@@ -262,6 +255,6 @@ const Projects = memo(() => {
   );
 });
 
-Projects.displayName = 'Projects';
+Projects.displayName = "Projects";
 
 export default Projects;
