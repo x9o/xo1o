@@ -43,8 +43,8 @@ const Hero = memo(() => {
           className="text-xl md:text-2xl text-white/80 mb-8 max-w-3xl mx-auto leading-relaxed font-sans"
         >
           Hey! I'm xo1o, a professional Roblox scripter with 3+ years of experience building complex game systems. I
-          specialize in clean Lua code, optimized performance, and scalable architectures that handle everything from
-          core gameplay mechanics to advanced server-client frameworks.
+          specialize in clean Lua code, optimized performance, and scalable architectures. Beyond Roblox, I am also
+          proficient in Python and web development.
         </InteractiveScrambledText>
 
         <div className="flex flex-wrap gap-4 justify-center mb-12">
