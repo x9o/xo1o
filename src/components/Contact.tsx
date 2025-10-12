@@ -6,7 +6,7 @@ const Contact = () => {
   return (
     <section className="py-12 px-4 bg-muted/30" id="contact">
       <div className="container mx-auto max-w-4xl">
-        <div className="text-center mb-2 animate-fade-in">
+        <div className="text-center animate-fade-in">
           <AnimatedHeader
             text="Let's Work Together"
             gradientText="Work Together"
