@@ -16,7 +16,8 @@ const releasedGames = [
     role: "Full Development",
     status: "Released",
     tags: ["Full Stack", "Monetization", "Game Systems"],
-    imageUrl: "https://tr.rbxcdn.com/180DAY-473399814d57d63f73e44d7ba2d3bf46/768/432/Image/Webp/noFilter" // Roblox game screenshot
+    imageUrl: "https://tr.rbxcdn.com/180DAY-473399814d57d63f73e44d7ba2d3bf46/768/432/Image/Webp/noFilter",
+    link: "https://www.roblox.com/games/18690533832/Steal-A-Streamer"
   },
   {
     title: "Miami 1986",
@@ -24,7 +25,8 @@ const releasedGames = [
     role: "Core Scripter",
     status: "Active Development",
     tags: ["Combat", "Systems", "Physics"],
-    imageUrl: "https://tr.rbxcdn.com/180DAY-d3f26b91f5e7d83300fdcf44b4193da7/768/432/Image/Webp/noFilter" // Gaming screenshot
+    imageUrl: "https://tr.rbxcdn.com/180DAY-d3f26b91f5e7d83300fdcf44b4193da7/768/432/Image/Webp/noFilter",
+    link: "https://www.roblox.com/games/17869980823/Miami-1986"
   }
 ];
 
@@ -34,35 +36,40 @@ const unreleasedGames = [
     description: "Everything seen is scripted by me",
     role: "Full Development",
     tags: ["Brainrot", "Systems", "Monetization"],
-    videoUrl: "https://youtu.be/JkuypVC5okQ" // Replace with your game video
+    videoUrl: "https://youtu.be/JkuypVC5okQ",
+    link: "https://youtu.be/JkuypVC5okQ"
   },
   {
     title: "Obscured",
     description: "Fully scripted by me.",
     role: "Full Development",
     tags: ["Complete System", "Advanced Mechanics"],
-    videoUrl: "https://youtu.be/X2kgIgzRH2s" // Replace with your game video
+    videoUrl: "https://youtu.be/X2kgIgzRH2s",
+    link: "https://youtu.be/X2kgIgzRH2s"
   },
   {
     title: "Smash Legends",
     description: "Fully scripted by me.",
     role: "Full Development",
     tags: ["Combat", "Character Systems"],
-    videoUrl: "https://youtu.be/IXgdFqOi28Y" // Replace with your game video
+    videoUrl: "https://youtu.be/IXgdFqOi28Y",
+    link: "https://youtu.be/IXgdFqOi28Y"
   },
   {
     title: "Don't Touch it!",
     description: "Core systems development",
     role: "Systems Developer",
     tags: ["Physics", "Game Logic"],
-    videoUrl: "https://videos.pexels.com/video-files/30333849/13003128_2560_1440_25fps.mp4" // Replace with your game video
+    videoUrl: "https://videos.pexels.com/video-files/30333849/13003128_2560_1440_25fps.mp4",
+    link: "https://videos.pexels.com/video-files/30333849/13003128_2560_1440_25fps.mp4"
   },
   {
     title: "Acid Escape",
     description: "Advanced mechanics implementation",
     role: "Mechanics Developer",
     tags: ["Physics", "Player Systems"],
-    videoUrl: "https://youtu.be/lYoSqpGbvfg" // Replace with your game video
+    videoUrl: "https://youtu.be/lYoSqpGbvfg",
+    link: "https://youtu.be/lYoSqpGbvfg"
   }
 ];
 
@@ -161,7 +168,15 @@ const Projects = memo(() => {
                           <CardTitle className="text-2xl group-hover:text-primary transition-colors">
                             {game.title}
                           </CardTitle>
-                          <ExternalLink className="h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors" />
+                          <a 
+                            href={game.link} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="shrink-0"
+                            onClick={(e) => e.stopPropagation()}
+                          >
+                            <ExternalLink className="h-5 w-5 text-muted-foreground hover:text-primary transition-colors cursor-pointer" />
+                          </a>
                         </div>
                         <CardDescription className="text-base">{game.description}</CardDescription>
                       </CardHeader>
@@ -205,9 +220,20 @@ const Projects = memo(() => {
                         </div>
                       )}
                       <CardHeader>
-                        <CardTitle className="text-xl group-hover:text-secondary transition-colors">
-                          {game.title}
-                        </CardTitle>
+                        <div className="flex items-start justify-between mb-2">
+                          <CardTitle className="text-xl group-hover:text-secondary transition-colors">
+                            {game.title}
+                          </CardTitle>
+                          <a 
+                            href={game.link} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="shrink-0"
+                            onClick={(e) => e.stopPropagation()}
+                          >
+                            <ExternalLink className="h-5 w-5 text-muted-foreground hover:text-primary transition-colors cursor-pointer" />
+                          </a>
+                        </div>
                         <CardDescription>{game.description}</CardDescription>
                       </CardHeader>
                       <CardContent>

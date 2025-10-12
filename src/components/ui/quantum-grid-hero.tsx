@@ -2,17 +2,31 @@
 
 import React, { useRef, useEffect } from 'react';
 
+interface ParticleType {
+  x: number;
+  y: number;
+  radius: number;
+  color: string;
+  isOrbiter: boolean;
+  orbitRadius: number;
+  angle: number;
+  speed: number;
+  draw: () => void;
+  update: (center: { x: number; y: number }) => void;
+}
+
 const CelestialOrbHero = () => {
-  const canvasRef = useRef(null);
+  const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
+    if (!ctx) return;
 
-    let particles = [];
+    let particles: ParticleType[] = [];
     let mouse = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
-    let animationFrameId;
+    let animationFrameId: number;
 
     const resizeCanvas = () => {
       canvas.width = window.innerWidth;
@@ -21,14 +35,23 @@ const CelestialOrbHero = () => {
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas);
 
-    const handleMouseMove = (e) => {
+    const handleMouseMove = (e: MouseEvent) => {
       mouse.x = e.clientX;
       mouse.y = e.clientY;
     };
     window.addEventListener('mousemove', handleMouseMove);
 
-    class Particle {
-      constructor(x, y, radius, color, isOrbiter = false) {
+    class Particle implements ParticleType {
+      x: number;
+      y: number;
+      radius: number;
+      color: string;
+      isOrbiter: boolean;
+      orbitRadius: number;
+      angle: number;
+      speed: number;
+
+      constructor(x: number, y: number, radius: number, color: string, isOrbiter = false) {
         this.x = x;
         this.y = y;
         this.radius = radius;
@@ -47,7 +70,7 @@ const CelestialOrbHero = () => {
         ctx.fill();
         ctx.shadowBlur = 0;
       }
-      update(center) {
+      update(center: { x: number; y: number }) {
         if (this.isOrbiter) {
           this.angle += this.speed;
           this.x = center.x + Math.cos(this.angle) * this.orbitRadius;
