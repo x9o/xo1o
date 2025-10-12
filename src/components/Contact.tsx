@@ -4,9 +4,9 @@ import DisplayCards from "@/components/ui/display-cards";
 
 const Contact = () => {
   return (
-    <section className="py-20 px-4 bg-muted/30" id="contact">
+    <section className="py-12 px-4 bg-muted/30" id="contact">
       <div className="container mx-auto max-w-4xl">
-        <div className="text-center mb-12 animate-fade-in">
+        <div className="text-center mb-6 animate-fade-in">
           <AnimatedHeader 
             text="Let's Work Together"
             gradientText="Work Together"
@@ -17,8 +17,8 @@ const Contact = () => {
           </p>
         </div>
 
-        <div className="bg-card border border-border rounded-lg p-8 md:p-12">
-          <div className="flex justify-center mb-4 min-h-[500px] items-center">
+        <div className="bg-card border border-border rounded-lg p-6 md:p-8">
+          <div className="flex justify-center mb-2 min-h-[350px] items-center">
             <DisplayCards
               cards={[
                 {
@@ -62,7 +62,7 @@ const Contact = () => {
             />
           </div>
 
-          <div className="text-center pt-4 border-t border-border">
+          <div className="text-center pt-2 border-t border-border">
             <p className="text-muted-foreground mb-2">Also find me on X (Twitter)</p>
             <a 
               href="https://x.com/xoloware" 
