@@ -39,7 +39,7 @@ const Hero = memo(() => {
           radius={67}
           duration={0.6}
           speed={0.5}
-          scrambleChars="01"
+          scrambleChars="XO1O"
           className="text-xl md:text-2xl text-white/80 mb-8 max-w-3xl mx-auto leading-relaxed font-sans"
         >
           Hey! I'm xo1o, a professional Roblox scripter with 3+ years of experience building complex game systems. I
