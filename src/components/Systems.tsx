@@ -35,7 +35,8 @@ const systems = [
     description: "VFX, SFX and Animations not created by me",
     icon: Zap,
     tags: ["Physics", "Combat", "Destruction"],
-    videoUrl: "https://youtu.be/kFlqp30BkyU", // Replace with your system demo
+    videoUrl:
+      "https://cdn.discordapp.com/attachments/1392828475060129995/1426787524415586346/2025-04-05_12-10-10.mp4?ex=68ec7eee&is=68eb2d6e&hm=c494c499843cb6433a03bdf8c9e15ab2529836aab33771d55e338aa614386216&", // Replace with your system demo
   },
   {
     title: "Weapon Combat + Movement System",
