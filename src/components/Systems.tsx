@@ -11,7 +11,8 @@ const systems = [
     description: "VFX, SFX and Animations not created by me, remake from heroes battlegrounds",
     icon: Sparkles,
     tags: ["Combat", "VFX", "Skill System"],
-    videoUrl: "https://files.catbox.moe/lj1m02.mp4", // Replace with your system demo
+    videoUrl:
+      "https://cdn.discordapp.com/attachments/1392828475060129995/1426788089371562076/2025-03-30_18-43-50.mp4?ex=68ec7f74&is=68eb2df4&hm=b8ec96222315e20451d6092d0e9245b951713f021c36802246c201fa2eac862a&", // Replace with your system demo
   },
   {
     title: "Full Pet System",
@@ -43,7 +44,7 @@ const systems = [
     description: "Complete combat system with advanced movement mechanics",
     icon: Sword,
     tags: ["Combat", "Movement", "Weapons"],
-    videoUrl: "https://youtu.be/vujfuxX9gUY?si=PxKm0iD_CFwhizcP", // Replace with your system demo
+    videoUrl: "https://files.catbox.moe/lj1m02.mp4", // Replace with your system demo
   },
 ];
 
