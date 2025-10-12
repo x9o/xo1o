@@ -36,7 +36,7 @@ const Hero = memo(() => {
         </div>
 
         <InteractiveScrambledText
-          radius={120}
+          radius={80}
           duration={1.2}
           speed={0.5}
           scrambleChars="01"
