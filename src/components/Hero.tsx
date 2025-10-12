@@ -1,7 +1,6 @@
 import { GalaxyBackground } from "@/components/ui/galaxy-background";
 import { MatrixText } from "@/components/ui/matrix-text";
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
-import InteractiveScrambledText from "@/components/ui/interactive-scrambled-text";
 import { memo, useCallback } from "react";
 
 const Hero = memo(() => {
@@ -35,17 +34,12 @@ const Hero = memo(() => {
           <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-primary via-secondary to-accent blur-sm" /> */}
         </div>
 
-        <InteractiveScrambledText
-          radius={67}
-          duration={0.6}
-          speed={0.5}
-          scrambleChars="XO1O"
-          className="text-xl md:text-2xl text-white/80 mb-8 max-w-3xl mx-auto leading-relaxed font-sans"
-        >
+        {/* Replaced interactive scrambled text with a plain paragraph for static content */}
+        <p className="text-xl md:text-2xl text-white/80 mb-8 max-w-3xl mx-auto leading-relaxed font-sans">
           Hey! I'm xo1o, a professional Roblox scripter with 3+ years of experience building complex game systems. I
           specialize in clean Lua code, optimized performance, and scalable architectures. Beyond Roblox, I am also
           proficient in Python and web development.
-        </InteractiveScrambledText>
+        </p>
 
         <div className="flex flex-wrap gap-4 justify-center mb-12">
           <InteractiveHoverButton
