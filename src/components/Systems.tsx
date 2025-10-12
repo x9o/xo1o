@@ -27,7 +27,8 @@ const systems = [
     description: "VFX and pet models are placeholder freemods, scripted by me.",
     icon: PawPrint,
     tags: ["Animation", "VFX", "Monetization"],
-    videoUrl: "https://www.youtube.com/watch?v=3tJj6wgwNrE", // Replace with your system demo
+    videoUrl:
+      "https://cdn.discordapp.com/attachments/1392828475060129995/1426787174493192333/2025-03-25_20-02-23.mp4?ex=68ec7e9a&is=68eb2d1a&hm=a22bbf048f1f07646b1e55e86ac3a7370ea2939d1479c478398dd4b92e0fefdf&", // Replace with your system demo
   },
   {
     title: "Lightning Skill with Map Destruction",
