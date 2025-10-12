@@ -36,7 +36,8 @@ const unreleasedGames = [
     description: "Everything seen is scripted by me",
     role: "Full Development",
     tags: ["Brainrot", "Systems", "Monetization"],
-    videoUrl: "https://youtu.be/JkuypVC5okQ",
+    videoUrl:
+      "https://cdn.discordapp.com/attachments/1392828475060129995/1426782936681680918/2025-10-04_21-29-00.mp4?ex=68ec7aa8&is=68eb2928&hm=8f9997d0acad2f7543e996e19d5d6ab0d663359371d34d602bf398b260b9b886&",
     link: "https://youtu.be/JkuypVC5okQ",
   },
   {
