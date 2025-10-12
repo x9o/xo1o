@@ -1,0 +1,1 @@
+import{j as e}from"./index-Bnh3LyT-.js";const t=()=>e.jsx("footer",{className:"py-8 px-4 border-t border-border",children:e.jsx("div",{className:"container mx-auto text-center",children:e.jsxs("p",{className:"text-muted-foreground",children:["© 2025 ",e.jsx("span",{className:"gradient-text font-semibold",children:"xo1o"}),". All rights reserved."]})})});export{t as default};
