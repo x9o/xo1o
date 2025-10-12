@@ -6,13 +6,13 @@ import { memo, useCallback } from "react";
 
 const Hero = memo(() => {
   const scrollToProjects = useCallback(() => {
-    const projectsSection = document.getElementById('projects');
-    projectsSection?.scrollIntoView({ behavior: 'smooth' });
+    const projectsSection = document.getElementById("projects");
+    projectsSection?.scrollIntoView({ behavior: "smooth" });
   }, []);
 
   const scrollToContact = useCallback(() => {
-    const contactSection = document.getElementById('contact');
-    contactSection?.scrollIntoView({ behavior: 'smooth' });
+    const contactSection = document.getElementById("contact");
+    contactSection?.scrollIntoView({ behavior: "smooth" });
   }, []);
 
   return (
@@ -23,7 +23,7 @@ const Hero = memo(() => {
 
       <div className="container mx-auto text-center z-10 animate-fade-in">
         <div className="relative inline-block mb-6">
-          <MatrixText 
+          <MatrixText
             text="Bringing Your Visions to Life"
             className="text-5xl md:text-7xl lg:text-8xl font-bold text-white"
             initialDelay={500}
@@ -36,13 +36,15 @@ const Hero = memo(() => {
         </div>
 
         <InteractiveScrambledText
-          radius={80}
-          duration={1.2}
+          radius={50}
+          duration={0.6}
           speed={0.5}
           scrambleChars="01"
           className="text-xl md:text-2xl text-white/80 mb-8 max-w-3xl mx-auto leading-relaxed font-sans"
         >
-          Hey! I'm xo1o, a professional Roblox scripter with 3+ years of experience building complex game systems. I specialize in clean Lua code, optimized performance, and scalable architectures.
+          Hey! I'm xo1o, a professional Roblox scripter with 3+ years of experience building complex game systems. I
+          specialize in clean Lua code, optimized performance, and scalable architectures that handle everything from
+          core gameplay mechanics to advanced server-client frameworks.
         </InteractiveScrambledText>
 
         <div className="flex flex-wrap gap-4 justify-center mb-12">
@@ -62,6 +64,6 @@ const Hero = memo(() => {
   );
 });
 
-Hero.displayName = 'Hero';
+Hero.displayName = "Hero";
 
 export default Hero;
