@@ -143,7 +143,9 @@ const Projects = memo(() => {
             gradientText="Worked On"
             className="text-4xl md:text-5xl font-bold mb-4"
           />
-          <p className="text-muted-foreground text-lg">Released titles and upcoming projects</p>
+          <p className="text-muted-foreground text-lg">
+            All videos are recorded using my account (X0L00X, aka iaintgivinuthechance)
+          </p>
         </div>
 
         <div className="max-w-6xl mx-auto">
