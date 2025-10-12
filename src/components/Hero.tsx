@@ -1,5 +1,5 @@
 import { GalaxyBackground } from "@/components/ui/galaxy-background";
-import { AnimatedHeader } from "@/components/ui/animated-header";
+import { MatrixText } from "@/components/ui/matrix-text";
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
 import { memo, useCallback } from "react";
 
@@ -22,9 +22,12 @@ const Hero = memo(() => {
 
       <div className="container mx-auto text-center z-10 animate-fade-in">
         <div className="relative inline-block mb-6">
-          <AnimatedHeader 
+          <MatrixText 
             text="xo1o"
             className="text-5xl md:text-7xl lg:text-8xl font-bold text-white"
+            initialDelay={500}
+            letterAnimationDuration={300}
+            letterInterval={80}
           />
           {/* Animated underline */}
           <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-primary via-secondary to-accent animate-pulse" />
