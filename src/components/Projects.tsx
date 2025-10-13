@@ -36,8 +36,7 @@ const unreleasedGames = [
     description: "Everything seen is scripted by me",
     role: "Full Development",
     tags: ["Brainrot", "Systems", "Monetization"],
-    videoUrl:
-      "https://cdn.discordapp.com/attachments/1392828475060129995/1426782936681680918/2025-10-04_21-29-00.mp4?ex=68ec7aa8&is=68eb2928&hm=8f9997d0acad2f7543e996e19d5d6ab0d663359371d34d602bf398b260b9b886&",
+    videoUrl: "https://youtu.be/JkuypVC5okQ",
     link: "https://youtu.be/JkuypVC5okQ",
   },
   {
@@ -45,8 +44,7 @@ const unreleasedGames = [
     description: "Fully scripted by me.",
     role: "Full Development",
     tags: ["Complete System", "Advanced Mechanics"],
-    videoUrl:
-      "https://cdn.discordapp.com/attachments/1392828475060129995/1426783662799851642/2025-06-02_18-38-09.mp4?ex=68ec7b55&is=68eb29d5&hm=2388a219817a8449c28325d3d08c5dab49139cc550b26b5e232cd8f3b589c62a&",
+    videoUrl: "https://youtu.be/X2kgIgzRH2s",
     link: "https://youtu.be/X2kgIgzRH2s",
   },
   {
@@ -54,8 +52,7 @@ const unreleasedGames = [
     description: "Fully scripted by me.",
     role: "Full Development",
     tags: ["Combat", "Character Systems"],
-    videoUrl:
-      "https://cdn.discordapp.com/attachments/1392828475060129995/1426784195941892167/2025-04-10_22-26-27.mp4?ex=68ec7bd4&is=68eb2a54&hm=afa06605ae79ee55e2cd4c9327241092a7b9a35f8eb8d1089dc518e2bde84d0d&",
+    videoUrl: "https://youtu.be/IXgdFqOi28Y",
     link: "https://youtu.be/IXgdFqOi28Y",
   },
   {
@@ -63,17 +60,15 @@ const unreleasedGames = [
     description: "Core systems development",
     role: "Systems Developer",
     tags: ["Game Logic"],
-    videoUrl:
-      "https://cdn.discordapp.com/attachments/1424168905307459644/1424168907153084446/wa.mp4?ex=68ec32a7&is=68eae127&hm=22125351bdb3c95dfbdebe17de7897562469b776e7d623cd1a7ade2ef336bea3&",
-    link: "",
+    videoUrl: "https://youtu.be/R6QtlJj3h4U",
+    link: "https://youtu.be/R6QtlJj3h4U",
   },
   {
     title: "Acid Escape",
     description: "Advanced mechanics implementation",
     role: "Mechanics Developer",
     tags: ["Physics", "Player Systems"],
-    videoUrl:
-      "https://cdn.discordapp.com/attachments/1392828475060129995/1426784488209252476/2025-08-25_18-54-35.mp4?ex=68ec7c1a&is=68eb2a9a&hm=1b3a50ba3cab70ccdcf9bbc37eb237709b8792d78eb7154369b8a1df4ec4d324&",
+    videoUrl: "https://youtu.be/lYoSqpGbvfg",
     link: "https://youtu.be/lYoSqpGbvfg",
   },
 ];

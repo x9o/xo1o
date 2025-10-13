@@ -12,7 +12,7 @@ const systems = [
     icon: Sparkles,
     tags: ["Combat", "VFX", "Skill System"],
     videoUrl:
-      "https://cdn.discordapp.com/attachments/1392828475060129995/1426788089371562076/2025-03-30_18-43-50.mp4?ex=68ec7f74&is=68eb2df4&hm=b8ec96222315e20451d6092d0e9245b951713f021c36802246c201fa2eac862a&", // Replace with your system demo
+      "https://youtu.be/qHOpq5fvPY8", // Replace with your system demo
   },
   {
     title: "Full Pet System",
@@ -21,7 +21,7 @@ const systems = [
     icon: PawPrint,
     tags: ["Inventory", "Systems", "Pets"],
     videoUrl:
-      "https://cdn.discordapp.com/attachments/1392828475060129995/1426786410039607416/2025-03-25_23-29-19.mp4?ex=68ec7de4&is=68eb2c64&hm=5fa47ae6753e7e300f1f906b1452bd341de933aaf7497a384581865d86f4eb2a&", // Replace with your system demo
+      "https://youtu.be/qVIv0Px6oPU", // Replace with your system demo
   },
   {
     title: "Pet Hatching/Rolling Animation",
@@ -29,7 +29,7 @@ const systems = [
     icon: PawPrint,
     tags: ["Animation", "VFX", "Monetization"],
     videoUrl:
-      "https://cdn.discordapp.com/attachments/1392828475060129995/1426787174493192333/2025-03-25_20-02-23.mp4?ex=68ec7e9a&is=68eb2d1a&hm=a22bbf048f1f07646b1e55e86ac3a7370ea2939d1479c478398dd4b92e0fefdf&", // Replace with your system demo
+      "https://youtu.be/3tJj6wgwNrE", // Replace with your system demo
   },
   {
     title: "Lightning Skill with Map Destruction",
@@ -37,14 +37,14 @@ const systems = [
     icon: Zap,
     tags: ["Physics", "Combat", "Destruction"],
     videoUrl:
-      "https://cdn.discordapp.com/attachments/1392828475060129995/1426787524415586346/2025-04-05_12-10-10.mp4?ex=68ec7eee&is=68eb2d6e&hm=c494c499843cb6433a03bdf8c9e15ab2529836aab33771d55e338aa614386216&", // Replace with your system demo
+      "https://youtu.be/kFlqp30BkyU", // Replace with your system demo
   },
   {
     title: "Weapon Combat + Movement System",
     description: "Complete combat system with advanced movement mechanics",
     icon: Sword,
     tags: ["Combat", "Movement", "Weapons"],
-    videoUrl: "https://files.catbox.moe/lj1m02.mp4", // Replace with your system demo
+    videoUrl: "https://youtu.be/vujfuxX9gUY", // Replace with your system demo
   },
 ];
 
