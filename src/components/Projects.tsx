@@ -11,8 +11,8 @@ import { useState, memo, useCallback } from "react";
 
 const releasedGames = [
   {
-    title: "Steal A Streamer",
-    description: "Game released and fully scripted by me.",
+    title: "Steal A Streamer [Demo Game]",
+    description: "Game fully scripted by me.",
     role: "Full Development",
     status: "Released",
     tags: ["Full Stack", "Monetization", "Game Systems"],
@@ -20,13 +20,22 @@ const releasedGames = [
     link: "https://www.roblox.com/games/78545085335980/Steal-a-Streamer",
   },
   {
-    title: "Miami 1986",
+    title: "Miami 1986 [2.0M+ Visits]",
     description: "Currently a scripter for the game.",
     role: "Core Scripter",
     status: "Active Development",
     tags: ["Systems"],
     imageUrl: "https://tr.rbxcdn.com/180DAY-d3f26b91f5e7d83300fdcf44b4193da7/768/432/Image/Webp/noFilter",
     link: "https://www.roblox.com/games/4780772099/Miami-1986",
+  },
+  {
+    title: "Oak Wood Equestrian [1.5M+ Visits]",
+    description: "Past scripter for the game.",
+    role: "Scripter",
+    status: "Released",
+    tags: ["Systems"],
+    imageUrl: "https://tr.rbxcdn.com/180DAY-ba2f4a9fad1e3251400c6e238a97ffe9/768/432/Image/Webp/noFilter",
+    link: "https://www.roblox.com/games/13716884245/Oak-Wood-Equestrian-Version-1-OG",
   },
 ];
 
@@ -163,7 +172,7 @@ const Projects = memo(() => {
                       )}
                       <CardHeader>
                         <div className="flex items-start justify-between mb-2">
-                          <CardTitle className="text-2xl group-hover:text-primary transition-colors">
+                          <CardTitle className="text-2xl transition-colors">
                             {game.title}
                           </CardTitle>
                           <a
@@ -173,7 +182,7 @@ const Projects = memo(() => {
                             className="shrink-0"
                             onClick={(e) => e.stopPropagation()}
                           >
-                            <ExternalLink className="h-5 w-5 text-muted-foreground hover:text-primary transition-colors cursor-pointer" />
+                            <ExternalLink className="h-5 w-5 text-muted-foreground transition-colors cursor-pointer" />
                           </a>
                         </div>
                         <CardDescription className="text-base">{game.description}</CardDescription>
@@ -215,7 +224,7 @@ const Projects = memo(() => {
                       )}
                       <CardHeader>
                         <div className="flex items-start justify-between mb-2">
-                          <CardTitle className="text-xl group-hover:text-secondary transition-colors">
+                          <CardTitle className="text-xl transition-colors">
                             {game.title}
                           </CardTitle>
                           <a
@@ -225,7 +234,7 @@ const Projects = memo(() => {
                             className="shrink-0"
                             onClick={(e) => e.stopPropagation()}
                           >
-                            <ExternalLink className="h-5 w-5 text-muted-foreground hover:text-primary transition-colors cursor-pointer" />
+                            <ExternalLink className="h-5 w-5 text-muted-foreground transition-colors cursor-pointer" />
                           </a>
                         </div>
                         <CardDescription>{game.description}</CardDescription>

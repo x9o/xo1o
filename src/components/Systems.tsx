@@ -1,6 +1,6 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Sparkles, PawPrint, Zap, Sword } from "lucide-react";
+import { Sparkles, PawPrint, Zap, Sword, MapPin } from "lucide-react";
 import VideoPlayer from "@/components/ui/video-player";
 import { GradientCard } from "@/components/ui/gradient-card";
 import { AnimatedHeader } from "@/components/ui/animated-header";
@@ -46,6 +46,13 @@ const systems = [
     tags: ["Combat", "Movement", "Weapons"],
     videoUrl: "https://youtu.be/vujfuxX9gUY", // Replace with your system demo
   },
+  {
+    title: "Pathfinding System",
+    description: "Semi-advanced pathfinding system with visualiser",
+    icon: MapPin,
+    tags: ["Pathfinding", "Systems"],
+    videoUrl: "https://youtu.be/o1_icChz3MU", // Replace with your system demo
+  },
 ];
 
 const Systems = () => {
@@ -72,11 +79,11 @@ const Systems = () => {
                 )}
                 <CardHeader>
                   <div className="flex items-start gap-4">
-                    <div className="p-3 rounded-lg bg-accent/10 group-hover:bg-accent/20 transition-colors">
+                    <div className="p-3 rounded-lg bg-accent/10 transition-colors">
                       <system.icon className="h-6 w-6 text-accent" />
                     </div>
                     <div className="flex-1">
-                      <CardTitle className="text-xl group-hover:text-accent transition-colors mb-2">
+                      <CardTitle className="text-xl transition-colors mb-2">
                         {system.title}
                       </CardTitle>
                       <CardDescription className="text-sm leading-relaxed">{system.description}</CardDescription>
