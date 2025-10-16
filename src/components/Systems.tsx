@@ -57,12 +57,11 @@ const systems = [
 
 const Systems = () => {
   return (
-    <section className="py-20 px-4" id="systems">
+    <section className="py-20 px-4 bg-black" id="systems">
       <div className="container mx-auto">
         <div className="text-center mb-16 animate-fade-in">
           <AnimatedHeader
             text="Featured Systems"
-            gradientText="Systems"
             className="text-4xl md:text-5xl font-bold mb-4"
           />
           <p className="text-muted-foreground text-lg">Custom systems and mechanics I've developed</p>

@@ -40,30 +40,13 @@ export const AnimatedHeader = ({ text, className, gradientText }: AnimatedHeader
     <div ref={headerRef} className="overflow-hidden">
       {isVisible ? (
         gradientText ? (
-          <div className="flex flex-wrap justify-center items-center gap-2">
-            {parts[0] && (
-              <GradualSpacing
-                text={parts[0].trim()}
-                className={cn(className)}
-                duration={0.5}
-                delayMultiple={0.04}
-              />
-            )}
-            <GradualSpacing
-              text={gradientText}
-              className={cn(className, "gradient-text")}
-              duration={0.5}
-              delayMultiple={0.04}
-            />
-            {parts[1] && (
-              <GradualSpacing
-                text={parts[1].trim()}
-                className={cn(className)}
-                duration={0.5}
-                delayMultiple={0.04}
-              />
-            )}
-          </div>
+          // If gradientText is provided but not desired, render plain text without gradient styling
+          <GradualSpacing
+            text={text}
+            className={cn(className)}
+            duration={0.5}
+            delayMultiple={0.04}
+          />
         ) : (
           <GradualSpacing
             text={text}

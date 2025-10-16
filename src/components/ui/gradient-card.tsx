@@ -37,8 +37,8 @@ export const GradientCard = ({ children, className }: GradientCardProps) => {
       className={cn("relative rounded-[32px] overflow-hidden w-full h-full", className)}
       style={{
         transformStyle: "preserve-3d",
-        backgroundColor: "#0e131f",
-        boxShadow: "0 -10px 100px 10px rgba(78, 99, 255, 0.25), 0 0 10px 0 rgba(0, 0, 0, 0.5)",
+        backgroundColor: "#000000",
+        boxShadow: "0 -10px 80px 10px rgba(255, 255, 255, 0.06), 0 0 10px 0 rgba(0, 0, 0, 0.5)",
       }}
       initial={{ y: 0 }}
       animate={{
@@ -97,18 +97,18 @@ export const GradientCard = ({ children, className }: GradientCardProps) => {
         }}
       />
 
-      {/* Purple/blue glow effect */}
+      {/* Faint white glow effect */}
       <motion.div
         className="absolute bottom-0 left-0 right-0 h-2/3 z-20"
         style={{
           background: `
-            radial-gradient(ellipse at bottom right, rgba(172, 92, 255, 0.7) -10%, rgba(79, 70, 229, 0) 70%),
-            radial-gradient(ellipse at bottom left, rgba(56, 189, 248, 0.7) -10%, rgba(79, 70, 229, 0) 70%)
+            radial-gradient(ellipse at bottom right, rgba(255, 255, 255, 0.18) -10%, rgba(255, 255, 255, 0) 70%),
+            radial-gradient(ellipse at bottom left, rgba(255, 255, 255, 0.18) -10%, rgba(255, 255, 255, 0) 70%)
           `,
-          filter: "blur(40px)",
+          filter: "blur(36px)",
         }}
         animate={{
-          opacity: isHovered ? 0.9 : 0.8,
+          opacity: isHovered ? 0.6 : 0.5,
           y: isHovered ? rotation.x * 0.5 : 0,
           z: 0
         }}
@@ -118,15 +118,15 @@ export const GradientCard = ({ children, className }: GradientCardProps) => {
         }}
       />
 
-      {/* Central purple glow */}
+      {/* Central white glow */}
       <motion.div
         className="absolute bottom-0 left-0 right-0 h-2/3 z-21"
         style={{
-          background: `radial-gradient(circle at bottom center, rgba(161, 58, 229, 0.7) -20%, rgba(79, 70, 229, 0) 60%)`,
-          filter: "blur(45px)",
+          background: `radial-gradient(circle at bottom center, rgba(255, 255, 255, 0.22) -20%, rgba(255, 255, 255, 0) 60%)`,
+          filter: "blur(40px)",
         }}
         animate={{
-          opacity: isHovered ? 0.85 : 0.75,
+          opacity: isHovered ? 0.5 : 0.45,
           y: isHovered ? `calc(10% + ${rotation.x * 0.3}px)` : "10%",
           z: 0
         }}
@@ -140,12 +140,12 @@ export const GradientCard = ({ children, className }: GradientCardProps) => {
       <motion.div
         className="absolute bottom-0 left-0 right-0 h-[2px] z-25"
         style={{
-          background: "linear-gradient(90deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.7) 50%, rgba(255, 255, 255, 0.05) 100%)",
+          background: "linear-gradient(90deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.6) 50%, rgba(255, 255, 255, 0.08) 100%)",
         }}
         animate={{
           boxShadow: isHovered
-            ? "0 0 20px 4px rgba(172, 92, 255, 0.9), 0 0 30px 6px rgba(138, 58, 185, 0.7), 0 0 40px 8px rgba(56, 189, 248, 0.5)"
-            : "0 0 15px 3px rgba(172, 92, 255, 0.8), 0 0 25px 5px rgba(138, 58, 185, 0.6), 0 0 35px 7px rgba(56, 189, 248, 0.4)",
+            ? "0 0 20px 4px rgba(255, 255, 255, 0.35), 0 0 30px 6px rgba(255, 255, 255, 0.25), 0 0 40px 8px rgba(255, 255, 255, 0.15)"
+            : "0 0 15px 3px rgba(255, 255, 255, 0.28), 0 0 25px 5px rgba(255, 255, 255, 0.18), 0 0 35px 7px rgba(255, 255, 255, 0.12)",
           opacity: isHovered ? 1 : 0.9,
           z: 0.5
         }}
@@ -159,12 +159,12 @@ export const GradientCard = ({ children, className }: GradientCardProps) => {
       <motion.div
         className="absolute bottom-0 left-0 h-1/4 w-[1px] z-25 rounded-full"
         style={{
-          background: "linear-gradient(to top, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.5) 20%, rgba(255, 255, 255, 0.3) 40%, rgba(255, 255, 255, 0.1) 60%, rgba(255, 255, 255, 0) 80%)",
+          background: "linear-gradient(to top, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.35) 20%, rgba(255, 255, 255, 0.2) 40%, rgba(255, 255, 255, 0.08) 60%, rgba(255, 255, 255, 0) 80%)",
         }}
         animate={{
           boxShadow: isHovered
-            ? "0 0 20px 4px rgba(172, 92, 255, 0.9), 0 0 30px 6px rgba(138, 58, 185, 0.7), 0 0 40px 8px rgba(56, 189, 248, 0.5)"
-            : "0 0 15px 3px rgba(172, 92, 255, 0.8), 0 0 25px 5px rgba(138, 58, 185, 0.6), 0 0 35px 7px rgba(56, 189, 248, 0.4)",
+            ? "0 0 20px 4px rgba(255, 255, 255, 0.25), 0 0 30px 6px rgba(255, 255, 255, 0.15), 0 0 40px 8px rgba(255, 255, 255, 0.1)"
+            : "0 0 15px 3px rgba(255, 255, 255, 0.2), 0 0 25px 5px rgba(255, 255, 255, 0.12), 0 0 35px 7px rgba(255, 255, 255, 0.08)",
           opacity: isHovered ? 1 : 0.9,
           z: 0.5
         }}
@@ -178,12 +178,12 @@ export const GradientCard = ({ children, className }: GradientCardProps) => {
       <motion.div
         className="absolute bottom-0 left-0 h-1/4 z-25"
         style={{
-          background: "linear-gradient(to top, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.55) 15%, rgba(255, 255, 255, 0.4) 30%, rgba(255, 255, 255, 0.25) 45%, rgba(255, 255, 255, 0.1) 70%, rgba(255, 255, 255, 0) 85%)",
+          background: "linear-gradient(to top, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.35) 15%, rgba(255, 255, 255, 0.22) 30%, rgba(255, 255, 255, 0.12) 45%, rgba(255, 255, 255, 0.06) 70%, rgba(255, 255, 255, 0) 85%)",
         }}
         animate={{
           boxShadow: isHovered
-            ? "0 0 20px 4px rgba(172, 92, 255, 0.9), 0 0 30px 6px rgba(138, 58, 185, 0.7), 0 0 40px 8px rgba(56, 189, 248, 0.5)"
-            : "0 0 15px 3px rgba(172, 92, 255, 0.8), 0 0 25px 5px rgba(138, 58, 185, 0.6), 0 0 35px 7px rgba(56, 189, 248, 0.4)",
+            ? "0 0 20px 4px rgba(255, 255, 255, 0.25), 0 0 30px 6px rgba(255, 255, 255, 0.15), 0 0 40px 8px rgba(255, 255, 255, 0.1)"
+            : "0 0 15px 3px rgba(255, 255, 255, 0.2), 0 0 25px 5px rgba(255, 255, 255, 0.12), 0 0 35px 7px rgba(255, 255, 255, 0.08)",
           opacity: isHovered ? 1 : 0.9,
           z: 0.5
         }}
@@ -197,12 +197,12 @@ export const GradientCard = ({ children, className }: GradientCardProps) => {
       <motion.div
         className="absolute bottom-0 right-0 h-1/4 w-[1px] z-25 rounded-full"
         style={{
-          background: "linear-gradient(to top, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.5) 20%, rgba(255, 255, 255, 0.3) 40%, rgba(255, 255, 255, 0.1) 60%, rgba(255, 255, 255, 0) 80%)",
+          background: "linear-gradient(to top, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.35) 20%, rgba(255, 255, 255, 0.2) 40%, rgba(255, 255, 255, 0.08) 60%, rgba(255, 255, 255, 0) 80%)",
         }}
         animate={{
           boxShadow: isHovered
-            ? "0 0 20px 4px rgba(172, 92, 255, 0.9), 0 0 30px 6px rgba(138, 58, 185, 0.7), 0 0 40px 8px rgba(56, 189, 248, 0.5)"
-            : "0 0 15px 3px rgba(172, 92, 255, 0.8), 0 0 25px 5px rgba(138, 58, 185, 0.6), 0 0 35px 7px rgba(56, 189, 248, 0.4)",
+            ? "0 0 20px 4px rgba(255, 255, 255, 0.25), 0 0 30px 6px rgba(255, 255, 255, 0.15), 0 0 40px 8px rgba(255, 255, 255, 0.1)"
+            : "0 0 15px 3px rgba(255, 255, 255, 0.2), 0 0 25px 5px rgba(255, 255, 255, 0.12), 0 0 35px 7px rgba(255, 255, 255, 0.08)",
           opacity: isHovered ? 1 : 0.9,
           z: 0.5
         }}
@@ -220,8 +220,8 @@ export const GradientCard = ({ children, className }: GradientCardProps) => {
         }}
         animate={{
           boxShadow: isHovered
-            ? "0 0 20px 4px rgba(172, 92, 255, 0.9), 0 0 30px 6px rgba(138, 58, 185, 0.7), 0 0 40px 8px rgba(56, 189, 248, 0.5)"
-            : "0 0 15px 3px rgba(172, 92, 255, 0.8), 0 0 25px 5px rgba(138, 58, 185, 0.6), 0 0 35px 7px rgba(56, 189, 248, 0.4)",
+            ? "0 0 20px 4px rgba(255, 255, 255, 0.25), 0 0 30px 6px rgba(255, 255, 255, 0.15), 0 0 40px 8px rgba(255, 255, 255, 0.1)"
+            : "0 0 15px 3px rgba(255, 255, 255, 0.2), 0 0 25px 5px rgba(255, 255, 255, 0.12), 0 0 35px 7px rgba(255, 255, 255, 0.08)",
           opacity: isHovered ? 1 : 0.9,
           z: 0.5
         }}

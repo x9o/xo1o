@@ -37,12 +37,11 @@ const skills = [
 
 const Skills = () => {
   return (
-    <section className="py-20 px-4" id="skills">
+    <section className="py-20 px-4 bg-black" id="skills">
       <div className="container mx-auto">
         <div className="text-center mb-16 animate-fade-in">
           <AnimatedHeader 
             text="What I Can Do"
-            gradientText="Do"
             className="text-4xl md:text-5xl font-bold mb-4"
           />
           <p className="text-muted-foreground text-lg">Full-stack Roblox development expertise</p>

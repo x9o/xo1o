@@ -1,6 +1,5 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Tabs, TabsContent } from "@/components/ui/tabs";
 import { ExternalLink } from "lucide-react";
 import VideoPlayer from "@/components/ui/video-player";
 import { GradientCard } from "@/components/ui/gradient-card";
@@ -139,12 +138,11 @@ const Projects = memo(() => {
   }, []);
 
   return (
-    <section className="py-20 px-4 bg-muted/30" id="projects">
+    <section className="py-20 px-4 bg-black" id="projects">
       <div className="container mx-auto">
         <div className="text-center mb-16 animate-fade-in">
           <AnimatedHeader
             text="Games I've Worked On"
-            gradientText="Worked On"
             className="text-4xl md:text-5xl font-bold mb-4"
           />
           <p className="text-muted-foreground text-lg">
@@ -167,6 +165,9 @@ const Projects = memo(() => {
                             src={game.imageUrl}
                             alt={`${game.title} screenshot`}
                             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                            loading="lazy"
+                            decoding="async"
+                            fetchPriority="low"
                           />
                         </div>
                       )}
