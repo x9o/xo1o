@@ -19,7 +19,7 @@ const Hero = memo(() => {
         badge="Professional Roblox Developer"
         title1="Bringing Your"
         title2="Visions to Life"
-        description="Hey! I'm xo1o, a professional Roblox scripter with 3+ years of experience building complex game systems. I specialize in clean Lua code, optimized performance, and scalable architectures. Beyond Roblox, I am also proficient in Python and web development."
+        description=" I’m xo1o, a professional Roblox scripter specializing in clean, efficient Lua systems. With 3+ years of experience, I build games that are stable, optimized, and ready to impress players."
       >
         <div className="flex flex-wrap gap-4 justify-center">
           <InteractiveHoverButton
