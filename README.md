@@ -1,1 +1,1 @@
-# xo1o.lovable.app
+# xo1o.xyz

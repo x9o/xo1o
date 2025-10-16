@@ -1,6 +1,7 @@
 "use client"
 
 import React, { useState, useEffect } from 'react';
+import { SiRoblox } from 'react-icons/si';
 
 export const ProfessionalConnect = () => {
   const [, setHoveredIndex] = useState<number | null>(null);
@@ -56,9 +57,7 @@ export const ProfessionalConnect = () => {
     {
       name: 'Roblox',
       icon: (
-        <svg viewBox="0 0 24 24" fill="currentColor" className="w-7 h-7">
-          <path d="M3.5 3.5l17-3.5-3.5 17-17 3.5 3.5-17zm8.2 8.8a2.3 2.3 0 100-4.6 2.3 2.3 0 000 4.6z" />
-        </svg>
+        <SiRoblox className="w-7 h-7" />
       ),
       gradient: 'from-rose-600 to-pink-500',
       shadowColor: 'rgba(244, 63, 94, 0.5)',
