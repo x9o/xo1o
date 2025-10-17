@@ -15,9 +15,10 @@ const Hero = memo(() => {
   }, []);
 
   return (
-    <section id="hero" className="relative">
+    <section id="hero" className="relative min-h-screen">
       <AnimatedShaderBackground />
-      <HeroGeometric
+      <div className="relative z-10">
+        <HeroGeometric
         badge="Professional Roblox Developer"
         title1="Bringing Your"
         title2="Visions to Life"
@@ -35,7 +36,8 @@ const Hero = memo(() => {
             onClick={scrollToContact}
           />
         </div>
-      </HeroGeometric>
+        </HeroGeometric>
+      </div>
     </section>
   );
 });

@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 
 const AnimatedShaderBackground = () => {
@@ -6,11 +6,11 @@ const AnimatedShaderBackground = () => {
 
   useEffect(() => {
     if (!containerRef.current) return;
-
+    
     const container = containerRef.current;
     const scene = new THREE.Scene();
     const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
-    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false });
     renderer.setSize(window.innerWidth, window.innerHeight);
     container.appendChild(renderer.domElement);
 
@@ -117,7 +117,7 @@ const AnimatedShaderBackground = () => {
   }, []);
 
   return (
-    <div ref={containerRef} className="absolute inset-0 w-full h-full" />
+    <div ref={containerRef} className="fixed inset-0 w-full h-full" style={{ zIndex: 0 }} />
   );
 };
 
