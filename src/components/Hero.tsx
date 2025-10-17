@@ -1,5 +1,6 @@
 import { HeroGeometric } from "@/components/ui/shape-landing-hero";
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
+import AnimatedShaderBackground from "@/components/ui/animated-shader-background";
 import { memo, useCallback } from "react";
 
 const Hero = memo(() => {
@@ -14,7 +15,8 @@ const Hero = memo(() => {
   }, []);
 
   return (
-    <section id="hero">
+    <section id="hero" className="relative">
+      <AnimatedShaderBackground />
       <HeroGeometric
         badge="Professional Roblox Developer"
         title1="Bringing Your"
