@@ -10,9 +10,9 @@ const Hero = memo(() => {
     projectsSection?.scrollIntoView({ behavior: "smooth" });
   }, []);
 
-  const scrollToContact = useCallback(() => {
-    const contactSection = document.getElementById("contact");
-    contactSection?.scrollIntoView({ behavior: "smooth" });
+  const scrollToSystems = useCallback(() => {
+    const systemsSection = document.getElementById("systems");
+    systemsSection?.scrollIntoView({ behavior: "smooth" });
   }, []);
 
   return (
@@ -78,9 +78,9 @@ const Hero = memo(() => {
               onClick={scrollToProjects}
             />
             <InteractiveHoverButton
-              text="Contact"
+              text="Systems"
               className="w-32 border-white/20 text-white font-semibold [&_span]:pl-2"
-              onClick={scrollToContact}
+              onClick={scrollToSystems}
             />
           </motion.div>
         </div>
