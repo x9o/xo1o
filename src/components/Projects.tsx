@@ -4,9 +4,7 @@ import { ExternalLink } from "lucide-react";
 import VideoPlayer from "@/components/ui/video-player";
 import { GradientCard } from "@/components/ui/gradient-card";
 import { AnimatedHeader } from "@/components/ui/animated-header";
-import { motion } from "framer-motion";
-import { cn } from "@/lib/utils";
-import { useState, memo, useCallback } from "react";
+import { memo } from "react";
 
 const releasedGames = [
   {
@@ -81,62 +79,9 @@ const unreleasedGames = [
   },
 ];
 
-const TubelightTabs = memo(({ activeTab, onTabChange }: { activeTab: string; onTabChange: (tab: string) => void }) => {
-  const tabs = [
-    { value: "released", label: "Released" },
-    { value: "unreleased", label: "In Development" },
-  ];
-
-  return (
-    <div className="flex items-center gap-2 bg-background/5 border border-border backdrop-blur-lg py-1 px-1 rounded-full shadow-lg w-fit mx-auto mb-12">
-      {tabs.map((tab) => {
-        const isActive = activeTab === tab.value;
-
-        return (
-          <button
-            key={tab.value}
-            onClick={() => onTabChange(tab.value)}
-            className={cn(
-              "relative cursor-pointer text-sm font-semibold px-8 py-3 rounded-full transition-colors min-w-[140px]",
-              "text-foreground/80 hover:text-primary",
-              isActive && "bg-muted text-primary",
-            )}
-          >
-            <span>{tab.label}</span>
-            {isActive && (
-              <motion.div
-                layoutId="projects-lamp"
-                className="absolute inset-0 w-full bg-primary/5 rounded-full -z-10"
-                initial={false}
-                transition={{
-                  type: "spring",
-                  stiffness: 300,
-                  damping: 30,
-                }}
-              >
-                <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-8 h-1 bg-primary rounded-t-full">
-                  <div className="absolute w-12 h-6 bg-primary/20 rounded-full blur-md -top-2 -left-2" />
-                  <div className="absolute w-8 h-6 bg-primary/20 rounded-full blur-md -top-1" />
-                  <div className="absolute w-4 h-4 bg-primary/20 rounded-full blur-sm top-0 left-2" />
-                </div>
-              </motion.div>
-            )}
-          </button>
-        );
-      })}
-    </div>
-  );
-});
-
-TubelightTabs.displayName = "TubelightTabs";
+const allGames = [...releasedGames, ...unreleasedGames];
 
 const Projects = memo(() => {
-  const [activeTab, setActiveTab] = useState("released");
-
-  const handleTabChange = useCallback((tab: string) => {
-    setActiveTab(tab);
-  }, []);
-
   return (
     <section className="py-20 px-4 bg-black" id="projects">
       <div className="container mx-auto">
@@ -151,115 +96,69 @@ const Projects = memo(() => {
         </div>
 
         <div className="max-w-6xl mx-auto">
-          <TubelightTabs activeTab={activeTab} onTabChange={handleTabChange} />
-
-          {activeTab === "released" && (
-            <div className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {releasedGames.map((game, index) => (
-                  <GradientCard key={index}>
-                    <Card className="bg-transparent border-0 group overflow-hidden h-full">
-                      {game.imageUrl && (
-                        <div className="w-full aspect-video overflow-hidden rounded-t-lg">
-                          <img
-                            src={game.imageUrl}
-                            alt={`${game.title} screenshot`}
-                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                            loading="lazy"
-                            decoding="async"
-                            fetchPriority="low"
-                          />
-                        </div>
-                      )}
-                      <CardHeader>
-                        <div className="flex items-start justify-between mb-2">
-                          <CardTitle className="text-2xl transition-colors">
-                            {game.title}
-                          </CardTitle>
-                          <a
-                            href={game.link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="shrink-0"
-                            onClick={(e) => e.stopPropagation()}
-                          >
-                            <ExternalLink className="h-5 w-5 text-muted-foreground transition-colors cursor-pointer" />
-                          </a>
-                        </div>
-                        <CardDescription className="text-base">{game.description}</CardDescription>
-                      </CardHeader>
-                      <CardContent>
-                        <div className="space-y-3">
-                          <div className="flex items-center gap-2">
-                            <Badge variant="outline" className="border-primary text-primary">
-                              {game.role}
-                            </Badge>
-                            <Badge variant="secondary">{game.status}</Badge>
-                          </div>
-                          <div className="flex flex-wrap gap-2">
-                            {game.tags.map((tag, i) => (
-                              <Badge key={i} variant="outline" className="text-xs">
-                                {tag}
-                              </Badge>
-                            ))}
-                          </div>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  </GradientCard>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {activeTab === "unreleased" && (
-            <div className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {unreleasedGames.map((game, index) => (
-                  <GradientCard key={index}>
-                    <Card className="bg-transparent border-0 group overflow-hidden h-full">
-                      {game.videoUrl && (
-                        <div className="w-full">
-                          <VideoPlayer src={game.videoUrl} />
-                        </div>
-                      )}
-                      <CardHeader>
-                        <div className="flex items-start justify-between mb-2">
-                          <CardTitle className="text-xl transition-colors">
-                            {game.title}
-                          </CardTitle>
-                          <a
-                            href={game.link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="shrink-0"
-                            onClick={(e) => e.stopPropagation()}
-                          >
-                            <ExternalLink className="h-5 w-5 text-muted-foreground transition-colors cursor-pointer" />
-                          </a>
-                        </div>
-                        <CardDescription>{game.description}</CardDescription>
-                      </CardHeader>
-                      <CardContent>
-                        <div className="space-y-3">
-                          <Badge variant="outline" className="border-secondary text-secondary">
-                            {game.role}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {allGames.map((game, index) => (
+              <GradientCard key={index}>
+                <Card className="bg-transparent border-0 group overflow-hidden h-full">
+                  {'imageUrl' in game && game.imageUrl && (
+                    <div className="w-full aspect-video overflow-hidden rounded-t-lg">
+                      <img
+                        src={game.imageUrl}
+                        alt={`${game.title} screenshot`}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        loading="lazy"
+                        decoding="async"
+                        fetchPriority="low"
+                      />
+                    </div>
+                  )}
+                  {'videoUrl' in game && game.videoUrl && (
+                    <div className="w-full">
+                      <VideoPlayer src={game.videoUrl} />
+                    </div>
+                  )}
+                  <CardHeader>
+                    <div className="flex items-start justify-between mb-2">
+                      <CardTitle className="text-xl transition-colors">
+                        {game.title}
+                      </CardTitle>
+                      <a
+                        href={game.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="shrink-0"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        <ExternalLink className="h-5 w-5 text-muted-foreground transition-colors cursor-pointer" />
+                      </a>
+                    </div>
+                    <CardDescription>
+                      {game.description}
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-3">
+                      <div className="flex items-center gap-2">
+                        <Badge variant="outline" className="border-primary text-primary">
+                          {game.role}
+                        </Badge>
+                        {'status' in game && (
+                          <Badge variant="secondary">{game.status}</Badge>
+                        )}
+                      </div>
+                      <div className="flex flex-wrap gap-2">
+                        {game.tags.map((tag, i) => (
+                          <Badge key={i} variant="outline" className="text-xs">
+                            {tag}
                           </Badge>
-                          <div className="flex flex-wrap gap-2">
-                            {game.tags.map((tag, i) => (
-                              <Badge key={i} variant="outline" className="text-xs">
-                                {tag}
-                              </Badge>
-                            ))}
-                          </div>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  </GradientCard>
-                ))}
-              </div>
-            </div>
-          )}
+                        ))}
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </GradientCard>
+            ))}
+          </div>
         </div>
       </div>
     </section>
