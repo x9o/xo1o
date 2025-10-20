@@ -67,7 +67,6 @@ const VideoPlayer = ({ src }: { src: string }) => {
   const [showControls, setShowControls] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
-  const [loadIframe, setLoadIframe] = useState(false);
 
   const togglePlay = () => {
     if (videoRef.current) {
@@ -146,27 +145,14 @@ const VideoPlayer = ({ src }: { src: string }) => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        onClick={() => setLoadIframe(true)}
       >
-        {!loadIframe ? (
-          <div className="w-full aspect-video flex items-center justify-center bg-black/50 cursor-pointer group">
-            <div className="text-center">
-              <div className="w-16 h-16 mx-auto mb-2 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-white/20 transition-colors">
-                <Play className="w-8 h-8 text-white" />
-              </div>
-              <p className="text-white/80 text-sm">Click to load video</p>
-            </div>
-          </div>
-        ) : (
-          <iframe
-            src={`https://www.youtube.com/embed/${videoId}?rel=0&modestbranding=1&showinfo=0`}
-            className="w-full aspect-video"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-            title="YouTube video player"
-            loading="lazy"
-          />
-        )}
+        <iframe
+          src={`https://www.youtube.com/embed/${videoId}?rel=0&modestbranding=1&showinfo=0`}
+          className="w-full aspect-video"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+          title="YouTube video player"
+        />
       </motion.div>
     );
   }
@@ -186,8 +172,6 @@ const VideoPlayer = ({ src }: { src: string }) => {
         onTimeUpdate={handleTimeUpdate}
         src={src}
         onClick={togglePlay}
-        preload="metadata"
-        playsInline
       />
 
       <AnimatePresence>
