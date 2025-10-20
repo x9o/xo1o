@@ -1,25 +1,15 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import * as THREE from 'three';
+import { Infinity, Rocket, Shield, Brain, Play, ChevronDown } from 'lucide-react';
 
 const AnoAI = () => {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const [isVisible, setIsVisible] = useState(true);
-  const [isActive, setIsActive] = useState(true);
+  const containerRef = useRef(null);
 
   useEffect(() => {
-    if (!containerRef.current) return;
-    
     const container = containerRef.current;
     const scene = new THREE.Scene();
     const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
-    
-    // Lower pixel ratio for better performance
-    const pixelRatio = Math.min(window.devicePixelRatio, 2);
-    const renderer = new THREE.WebGLRenderer({ 
-      antialias: false, // Disable for performance
-      powerPreference: 'high-performance'
-    });
-    renderer.setPixelRatio(pixelRatio);
+    const renderer = new THREE.WebGLRenderer({ antialias: true });
     renderer.setSize(window.innerWidth, window.innerHeight);
     container.appendChild(renderer.domElement);
 
@@ -99,13 +89,10 @@ const AnoAI = () => {
     const mesh = new THREE.Mesh(geometry, material);
     scene.add(mesh);
 
-    let frameId: number;
+    let frameId;
     const animate = () => {
-      // Only animate if visible and tab is active
-      if (isVisible && isActive) {
-        material.uniforms.iTime.value += 0.016;
-        renderer.render(scene, camera);
-      }
+      material.uniforms.iTime.value += 0.016;
+      renderer.render(scene, camera);
       frameId = requestAnimationFrame(animate);
     };
     animate();
@@ -116,34 +103,15 @@ const AnoAI = () => {
     };
     window.addEventListener('resize', handleResize);
 
-    // Pause animation when tab is inactive
-    const handleVisibilityChange = () => {
-      setIsActive(!document.hidden);
-    };
-    document.addEventListener('visibilitychange', handleVisibilityChange);
-
-    // Intersection Observer to pause when not visible
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsVisible(entry.isIntersecting);
-      },
-      { threshold: 0.1 }
-    );
-    observer.observe(container);
-
     return () => {
       cancelAnimationFrame(frameId);
       window.removeEventListener('resize', handleResize);
-      document.removeEventListener('visibilitychange', handleVisibilityChange);
-      observer.disconnect();
-      if (container.contains(renderer.domElement)) {
-        container.removeChild(renderer.domElement);
-      }
+      container.removeChild(renderer.domElement);
       geometry.dispose();
       material.dispose();
       renderer.dispose();
     };
-  }, [isVisible, isActive]);
+  }, []);
 
   return (
     <div ref={containerRef} className="relative overflow-x-hidden">
